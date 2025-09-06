@@ -17,7 +17,6 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         ></motion.div>
         {children}
       </div>
-      '
     </AnimatePresence>
   );
 };
