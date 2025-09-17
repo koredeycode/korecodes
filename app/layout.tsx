@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 // import "./app.css";
 
+import CurtainTransition from "@/components/CurtainTransition";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
-import StairTransition from "@/components/StairTransition";
 import { Fira_Code, Poppins } from "next/font/google";
+import StairTransition from "@/components/StairTransition";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${fira_code.variable} antialiased`}>
         <Header />
         <StairTransition />
+        {/* <CurtainTransition /> */}
         <PageTransition>{children}</PageTransition>
       </body>
     </html>

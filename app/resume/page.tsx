@@ -4,21 +4,28 @@ import { motion } from "framer-motion";
 import {
   FaCss3,
   FaFigma,
+  FaGitAlt,
   FaHtml5,
   FaJs,
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import {
+  SiDirectus,
+  SiExpress,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 const about = {
-  title: "About me",
-  descritpion:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  title: "About Me",
+  description:
+    "I'm Yusuf Akorede, a passionate full-stack developer with over three years of experience building web applications and scalable backend systems. I enjoy turning ideas into elegant solutions, focusing on clean code, performance, and great user experiences. I'm always open to exciting freelance opportunities and collaborations.",
   info: [
     { fieldName: "Name", fieldValue: "Yusuf Akorede" },
     { fieldName: "Phone", fieldValue: "+234 81 3909 8183" },
-    { fieldName: "Experience", fieldValue: "4+ Years" },
+    { fieldName: "Experience", fieldValue: "3+ Years" },
     { fieldName: "Nationality", fieldValue: "Nigerian" },
     { fieldName: "Freelance", fieldValue: "Available" },
     { fieldName: "Languages", fieldValue: "English" },
@@ -29,7 +36,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Full-Stack Software Developer with passion for building scalable web applications, integrating backend systems, and delivering performant UI solutions.",
   items: [
     {
       company: "Yoruba Echo",
@@ -37,109 +44,80 @@ const experience = {
       duration: "2025 - Present",
     },
     {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
+      company: "ALX Africa (Project Works)",
+      position: "Software Engineering Intern",
+      duration: "2022 - 2023",
     },
     {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
-    },
-    {
-      company: "Yoruba Echo",
-      position: "Backend Developer",
-      duration: "2025 - Present",
+      company: "Open-Source Contributions",
+      position: "Contributor",
+      duration: "2021 - Present",
     },
   ],
 };
 
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "My Education",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "A mix of formal study and self-driven learning, focusing on computer science, software engineering, and modern full-stack development.",
   items: [
+    {
+      institution: "University of the People",
+      degree: "Bachelor of Science in Computer Science",
+      duration: "2025 - Present",
+    },
     {
       institution: "ALX Africa",
       degree: "Software Engineering Program",
       duration: "2023",
     },
     {
-      institution: "Youtube",
-      degree: "Full Stack Development",
+      institution: "Alchemy University",
+      degree: "Web3 Development Bootcamp",
       duration: "2023 - Present",
     },
-    {
-      institution: "University of People",
-      degree: "Bachelor Degree in Computer Science",
-      duration: "2025 - Present",
-    },
-    {
-      institution: "University of People",
-      degree: "Bachelor Degree in Computer Science",
-      duration: "2025 - Present",
-    },
-    {
-      institution: "University of People",
-      degree: "Bachelor Degree in Computer Science",
-      duration: "2025 - Present",
-    },
-    {
-      institution: "University of People",
-      degree: "Bachelor Degree in Computer Science",
-      duration: "2025 - Present",
-    },
-    {
-      institution: "University of People",
-      degree: "Bachelor Degree in Computer Science",
-      duration: "2025 - Present",
-    },
   ],
 };
+
+// const skills = {
+//   title: "My skills",
+//   description:
+//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//   skillList: [
+//     { icon: <FaHtml5 />, name: "html 5" },
+//     { icon: <FaCss3 />, name: "css 3" },
+//     { icon: <FaJs />, name: "javascript" },
+//     { icon: <FaReact />, name: "react.js" },
+//     { icon: <SiNextdotjs />, name: "next.js" },
+//     { icon: <FaHtml5 />, name: "html 5" },
+//     { icon: <SiTailwindcss />, name: "tailwind.css" },
+//     { icon: <FaNodeJs />, name: "node.js" },
+//     { icon: <FaFigma />, name: "figma" },
+//   ],
+// };
 
 const skills = {
-  title: "My skills",
+  title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Technologies and tools I use to build performant, scalable web applications — from front-end interfaces to backend services and integrations.",
   skillList: [
-    { icon: <FaHtml5 />, name: "html 5" },
-    { icon: <FaCss3 />, name: "css 3" },
-    { icon: <FaJs />, name: "javascript" },
-    { icon: <FaReact />, name: "react.js" },
-    { icon: <SiNextdotjs />, name: "next.js" },
-    { icon: <FaHtml5 />, name: "html 5" },
-    { icon: <SiTailwindcss />, name: "tailwind.css" },
-    { icon: <FaNodeJs />, name: "node.js" },
-    { icon: <FaFigma />, name: "figma" },
+    { icon: <FaHtml5 />, name: "HTML5" },
+    { icon: <FaCss3 />, name: "CSS3" },
+    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <FaReact />, name: "React.js" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <FaFigma />, name: "Figma" },
+    { icon: <SiTypescript />, name: "TypeScript" }, // optional if you use it
+    { icon: <SiExpress />, name: "Express.js" }, // if applicable
+    { icon: <SiDirectus />, name: "Directus" }, // from Stacksync
+    { icon: <FaGitAlt />, name: "Git & GitHub" },
   ],
 };
 
+import DownloadResumeButton from "@/components/DownloadResumeButton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -174,6 +152,9 @@ const Resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           <div className="min-h-[70vh] w-full">
+            <div className="flex justify-end">
+              <DownloadResumeButton />
+            </div>
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
@@ -270,7 +251,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.descritpion}
+                  {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]">
                   {about.info.map((item, index) => {

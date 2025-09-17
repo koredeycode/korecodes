@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 
 const info = [
@@ -25,6 +26,38 @@ const info = [
 ];
 
 const Contact = () => {
+  const [service, setService] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const data = {
+      firstname: (form.elements.namedItem("firstname") as HTMLInputElement)
+        .value,
+      lastname: (form.elements.namedItem("lastname") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      service,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+    };
+
+    // Send to your API route
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      alert("Message sent!");
+      form.reset();
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -38,7 +71,10 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -48,13 +84,18 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input name="firstname" placeholder="Firstname" required />
+                <Input name="lastname" placeholder="Lastname" />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Email address"
+                  required
+                />
+                <Input name="phone" type="tel" placeholder="Phone number" />
               </div>
               {/* select  */}
-              <Select>
+              <Select onValueChange={setService}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service"></SelectValue>
                 </SelectTrigger>
@@ -69,12 +110,13 @@ const Contact = () => {
               </Select>
               {/* textarea */}
               <Textarea
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
               />
 
               {/* btn  */}
-              <Button size="md" className="max-w-40">
+              <Button type="submit" size="md" className="max-w-40">
                 Send message
               </Button>
             </form>

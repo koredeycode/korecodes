@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  /* --background: #ffffff;
+/* :root { */
+/* --background: #ffffff;
   --foreground: #171717; */
-  --primary: #1c1c22;
-  --accent: #00ff99;
+/* --primary: #1c1c22; */
+/* --accent: #00ff99; */
 
-  --accent-hover: #00e187;
+/* --accent-hover: #00e187; */
+/* } */
+
+:root {
+  --primary: #3d2b1f; /* dark brown */
+  --accent: #d4a373; /* sand */
+  --accent-hover: #b08968; /* deeper sand */
 }
 
 @theme inline {
