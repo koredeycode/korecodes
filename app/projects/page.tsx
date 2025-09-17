@@ -23,7 +23,7 @@ const projects = [
     description:
       "A decentralized betting platform where users can create, join, and settle wagers securely on-chain.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/wager.png",
     live: "https://wise-wager.vercel.app/", // add live link if deployed
     github: "https://github.com/koredeycode/WiseWager",
   },
@@ -34,7 +34,7 @@ const projects = [
     description:
       "Blockchain-powered marketplace for buying and licensing intellectual property assets worldwide.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/ipverse.png",
     live: "https://ipverse.vercel.app/",
     github: "https://github.com/koredeycode/IPVerse",
   },
@@ -45,7 +45,7 @@ const projects = [
     description:
       "Helps Union Testnets users track their transactions and visualize activity in a clear dashboard.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/union.png",
     live: "https://union-transaction-analyzer.vercel.app/", // put your deployed link here
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
   },
