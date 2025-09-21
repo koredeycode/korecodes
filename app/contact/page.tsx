@@ -1,18 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { useState } from "react";
+// import { useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 
 const info = [
@@ -26,7 +17,7 @@ const info = [
 ];
 
 const Contact = () => {
-  const [service, setService] = useState("");
+  // const [service, setService] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,8 +28,8 @@ const Contact = () => {
         .value,
       lastname: (form.elements.namedItem("lastname") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      service,
+      // phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      // service,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
     };
@@ -77,10 +68,8 @@ const Contact = () => {
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestias accusamus et ullam molestiae, maxime, temporibus
-                delectus repellendus ad impedit atque quam voluptatem earum enim
-                libero architecto vitae, odit non! Aspernatur.
+                Can't wait to hear from you. Fill out the form below and I'll
+                get back to you as soon as possible.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -91,11 +80,12 @@ const Contact = () => {
                   type="email"
                   placeholder="Email address"
                   required
+                  className="md:col-span-2"
                 />
-                <Input name="phone" type="tel" placeholder="Phone number" />
+                {/* <Input name="phone" type="tel" placeholder="Phone number" /> */}
               </div>
               {/* select  */}
-              <Select onValueChange={setService}>
+              {/* <Select onValueChange={setService}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service"></SelectValue>
                 </SelectTrigger>
@@ -107,7 +97,7 @@ const Contact = () => {
                     <SelectItem value="mst">Logo Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
-              </Select>
+              </Select> */}
               {/* textarea */}
               <Textarea
                 name="message"

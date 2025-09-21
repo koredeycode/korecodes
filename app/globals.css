@@ -10,9 +10,9 @@
 /* } */
 
 :root {
-  --primary: #3d2b1f; /* dark brown */
-  --accent: #d4a373; /* sand */
-  --accent-hover: #b08968; /* deeper sand */
+  --primary: #0f172a; /* deep navy (background) */
+  --accent: #38bdf8; /* sky blue / cyan */
+  --accent-hover: #0284c7; /* darker cyan for hover */
 }
 
 @theme inline {

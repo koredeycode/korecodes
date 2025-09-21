@@ -150,11 +150,11 @@ const Resume = () => {
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
+            {/* <div className="flex justify-start"> */}
+            <DownloadResumeButton />
+            {/* </div> */}
           </TabsList>
           <div className="min-h-[70vh] w-full">
-            <div className="flex justify-end">
-              <DownloadResumeButton />
-            </div>
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>

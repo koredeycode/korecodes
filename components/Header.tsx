@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-white">
-      <div className="container mx-auto flex justify-between items-center p-[15px]">
+    <header className="text-white w-full sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center p-[15px] bg-accent-hover/20 backdrop-blur-md md:rounded-xl rounded-none">
         <Link href="/">
           <h1 className="text-4xl font-semibold">
             <span className="text-accent">{"{"}</span>K
