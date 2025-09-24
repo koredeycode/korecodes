@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 
 const info = [
-  { icon: <FaPhoneAlt />, title: "Phone", description: "08139098183" },
+  // { icon: <FaPhoneAlt />, title: "Phone", description: "08139098183" },
   { icon: <FaEnvelope />, title: "Email", description: "koredey4u@gmail.com" },
-  {
-    icon: <FaMapMarkedAlt />,
-    title: "Address",
-    description: "Ikirun, Osun State, Nigeria",
-  },
+  // {
+  //   icon: <FaMapMarkedAlt />,
+  //   title: "Address",
+  //   description: "Ikirun, Osun State, Nigeria",
+  // },
 ];
 
 const Contact = () => {

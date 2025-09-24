@@ -9,7 +9,7 @@ export default function DownloadResumeButton() {
   const handleDownload = () => {
     setIsDownloading(true);
     const link = document.createElement("a");
-    link.href = "/resume.pdf";
+    link.href = "/Korecodes_Resume.pdf";
     link.download = "Yusuf-Akorede-Resume.pdf"; // optional custom name
     link.click();
     setIsDownloading(false);
