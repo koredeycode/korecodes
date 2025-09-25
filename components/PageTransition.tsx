@@ -16,7 +16,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
           className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
         ></motion.div>
 
-        <div className="p-[15px]">{children}</div>
+        <div className="p-[15px] mt-9">{children}</div>
       </div>
     </AnimatePresence>
   );
