@@ -23,9 +23,9 @@ const projects = [
     description:
       "A decentralized betting platform where users can create, join, and settle wagers securely on-chain.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/wager.png",
-    live: "https://wise-wager.vercel.app/", // add live link if deployed
-    github: "https://github.com/koredeycode/WiseWager",
+    image: "/assets/work/wagr.png",
+    live: "https://wagr-web.vercel.app", // add live link if deployed
+    github: "https://github.com/koredeycode/Wagr",
   },
   {
     num: "02",
@@ -61,17 +61,6 @@ const projects = [
     github: "https://github.com/koredeycode/stacksync",
   },
   {
-    num: "05",
-    category: "fullstack",
-    title: "Nestmates",
-    description:
-      "Connects tenants with potential roommates, simplifying shared living arrangements.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/koredeycode/nestmates",
-  },
-  {
     num: "06",
     category: "fullstack",
     title: "SoundScape",
@@ -81,6 +70,17 @@ const projects = [
     image: "/assets/work/thumb3.png",
     live: "",
     github: "https://github.com/koredeycode/soundscape",
+  },
+  {
+    num: "05",
+    category: "fullstack",
+    title: "Nestmates",
+    description:
+      "Connects tenants with potential roommates, simplifying shared living arrangements.",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }],
+    image: "/assets/work/thumb3.png",
+    live: "",
+    github: "https://github.com/koredeycode/nestmates",
   },
 ];
 
