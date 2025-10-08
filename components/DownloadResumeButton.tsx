@@ -39,7 +39,7 @@ export default function DownloadResumeButton() {
     setIsOpening(true);
 
     // Open PDF in a new browser tab
-    window.open("/Yusuf_Akorede_Resume.pdf", "_blank", "noopener,noreferrer");
+    window.open("/Yusuf-Akorede-CV.pdf", "_blank", "noopener,noreferrer");
 
     // Reset state after a short delay (so user sees the loading state briefly)
     setTimeout(() => setIsOpening(false), 500);

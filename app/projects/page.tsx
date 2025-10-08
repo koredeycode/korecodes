@@ -19,6 +19,21 @@ const projects = [
   {
     num: "01",
     category: "fullstack",
+    title: "YorubaFit",
+    description:
+      "An AI-powered Yoruba Fila and Gele virtual try-on storefront that allows users to upload photos and visualize headwear before purchasing. Combines AI image processing with e-commerce functionality.",
+    stack: [
+      { name: "NextJS" },
+      { name: "TailwindCSS" },
+      { name: "Typescript" },
+    ],
+    image: "/assets/work/yorubafit.png",
+    live: "https://yorubafit.vercel.app", // add live link if deployed
+    github: "https://github.com/koredeycode/",
+  },
+  {
+    num: "02",
+    category: "fullstack",
     title: "Wagr",
     description:
       "A decentralized betting platform where users can create, join, and settle wagers securely on-chain.",
@@ -28,7 +43,7 @@ const projects = [
     github: "https://github.com/koredeycode/Wagr",
   },
   {
-    num: "02",
+    num: "03",
     category: "fullstack",
     title: "IPVerse",
     description:
@@ -39,7 +54,7 @@ const projects = [
     github: "https://github.com/koredeycode/IPVerse",
   },
   {
-    num: "03",
+    num: "04",
     category: "frontend",
     title: "Union Tx Analyzer",
     description:
@@ -50,7 +65,7 @@ const projects = [
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
   },
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "Stacksync",
     description:
@@ -72,7 +87,7 @@ const projects = [
     github: "https://github.com/koredeycode/soundscape",
   },
   {
-    num: "05",
+    num: "07",
     category: "fullstack",
     title: "Nestmates",
     description:
