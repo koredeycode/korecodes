@@ -2,6 +2,8 @@ import DownloadResumeButton from "@/components/DownloadResumeButton";
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -19,6 +21,16 @@ const Home = () => {
               proficient in various programming language and technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
+              <Button
+                variant="default"
+                size="lg"
+                className="uppercase flex items-center gap-2"
+                asChild
+              >
+                <Link href="/projects">
+                  <span>See Projects</span>
+                </Link>
+              </Button>
               <DownloadResumeButton />
               <div className="mb-8 xl:mb-0">
                 <Socials
