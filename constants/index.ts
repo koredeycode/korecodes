@@ -2,6 +2,22 @@ export const projects = [
   {
     num: "01",
     category: "fullstack",
+    title: "Lendly",
+    description:
+      "A comprehensive lending platform connecting lenders and borrowers. Features real-time messaging, secure wallet transactions, item management, and a reputation system.",
+    stack: [
+      { name: "React Native" },
+      { name: "NestJS" },
+      { name: "PostgreSQL" },
+    ],
+    image: "/assets/work/thumb2.png",
+    live: "", // Not deployed yet
+    github: "https://github.com/koredeycode/lendly-mobile",
+    github_api: "https://github.com/koredeycode/lendly-api",
+  },
+  {
+    num: "02",
+    category: "fullstack",
     title: "YorubaFit",
     description:
       "An AI-powered Yoruba Fila and Gele virtual try-on storefront that allows users to upload photos and visualize headwear before purchasing. Combines AI image processing with e-commerce functionality.",
@@ -15,7 +31,7 @@ export const projects = [
     github: "https://github.com/koredeycode/",
   },
   {
-    num: "02",
+    num: "03",
     category: "fullstack",
     title: "Wagr",
     description:
@@ -26,7 +42,7 @@ export const projects = [
     github: "https://github.com/koredeycode/Wagr",
   },
   {
-    num: "03",
+    num: "04",
     category: "fullstack",
     title: "IPVerse",
     description:
@@ -37,7 +53,7 @@ export const projects = [
     github: "https://github.com/koredeycode/IPVerse",
   },
   {
-    num: "04",
+    num: "05",
     category: "frontend",
     title: "Union Tx Analyzer",
     description:
@@ -48,7 +64,7 @@ export const projects = [
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
   },
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "Stacksync",
     description:
@@ -59,7 +75,7 @@ export const projects = [
     github: "https://github.com/koredeycode/stacksync",
   },
   {
-    num: "06",
+    num: "07",
     category: "fullstack",
     title: "SoundScape",
     description:
@@ -70,7 +86,7 @@ export const projects = [
     github: "https://github.com/koredeycode/soundscape",
   },
   {
-    num: "07",
+    num: "08",
     category: "fullstack",
     title: "Nestmates",
     description:

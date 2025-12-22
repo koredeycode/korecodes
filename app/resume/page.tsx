@@ -12,10 +12,12 @@ import {
 } from "react-icons/fa";
 import {
   SiDirectus,
+  SiExpo,
   SiExpress,
+  SiNestjs,
   SiNextdotjs,
   SiTailwindcss,
-  SiTypescript,
+  SiTypescript
 } from "react-icons/si";
 
 const about = {
@@ -105,12 +107,14 @@ const skills = {
     { icon: <FaHtml5 />, name: "HTML5" },
     { icon: <FaCss3 />, name: "CSS3" },
     { icon: <FaJs />, name: "JavaScript" },
+    { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <FaReact />, name: "React.js" },
+    { icon: <SiExpo />, name: "React Native + Expo" },
     { icon: <SiNextdotjs />, name: "Next.js" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiNestjs />, name: "Nest.js" },
     { icon: <FaFigma />, name: "Figma" },
-    { icon: <SiTypescript />, name: "TypeScript" }, // optional if you use it
     { icon: <SiExpress />, name: "Express.js" }, // if applicable
     { icon: <SiDirectus />, name: "Directus" }, // from Stacksync
     { icon: <FaGitAlt />, name: "Git & GitHub" },
@@ -228,10 +232,11 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex flex-col justify-center items-center group gap-2">
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
+                              <p className="capitalize text-sm">{skill.name}</p>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p className="capitalize">{skill.name}</p>
