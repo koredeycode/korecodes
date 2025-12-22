@@ -56,7 +56,7 @@ const Work = () => {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
+               {project.live && <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -67,8 +67,9 @@ const Work = () => {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
+                </Link>}
+                
+                {project.github_api && <Link href={project.github_api}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -79,7 +80,7 @@ const Work = () => {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
+                </Link>}
                 
                 {project.github_api && (
                   <Link href={project.github_api}>

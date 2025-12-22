@@ -63,37 +63,37 @@ export const projects = [
     live: "https://union-transaction-analyzer.vercel.app/", // put your deployed link here
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
   },
-  {
-    num: "06",
-    category: "fullstack",
-    title: "Stacksync",
-    description:
-      "Integrates Paystack with Directus for a smooth payment experience — a hackathon-winning project.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/koredeycode/stacksync",
-  },
-  {
-    num: "07",
-    category: "fullstack",
-    title: "SoundScape",
-    description:
-      "A music player that curates playlists based on mood and listening history.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/koredeycode/soundscape",
-  },
-  {
-    num: "08",
-    category: "fullstack",
-    title: "Nestmates",
-    description:
-      "Connects tenants with potential roommates, simplifying shared living arrangements.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/koredeycode/nestmates",
-  },
+//   {
+//     num: "06",
+//     category: "fullstack",
+//     title: "Stacksync",
+//     description:
+//       "Integrates Paystack with Directus for a smooth payment experience — a hackathon-winning project.",
+//     stack: [{ name: "Html 5" }, { name: "Css 3" }],
+//     image: "/assets/work/thumb3.png",
+//     live: "",
+//     github: "https://github.com/koredeycode/stacksync",
+//   },
+//   {
+//     num: "07",
+//     category: "fullstack",
+//     title: "SoundScape",
+//     description:
+//       "A music player that curates playlists based on mood and listening history.",
+//     stack: [{ name: "Html 5" }, { name: "Css 3" }],
+//     image: "/assets/work/thumb3.png",
+//     live: "",
+//     github: "https://github.com/koredeycode/soundscape",
+//   },
+//   {
+//     num: "08",
+//     category: "fullstack",
+//     title: "Nestmates",
+//     description:
+//       "Connects tenants with potential roommates, simplifying shared living arrangements.",
+//     stack: [{ name: "Html 5" }, { name: "Css 3" }],
+//     image: "/assets/work/thumb3.png",
+//     live: "",
+//     github: "https://github.com/koredeycode/nestmates",
+//   },
 ];

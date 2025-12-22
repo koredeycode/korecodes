@@ -41,9 +41,14 @@ const experience = {
     "Full-Stack Software Developer with passion for building scalable web applications, integrating backend systems, and delivering performant UI solutions.",
   items: [
     {
-      company: "Yoruba Echo",
+      company: "YorubaEcho",
       position: "Backend Developer",
-      duration: "2025 - Present",
+      duration: "2025",
+    }, 
+    {
+      company: "SabiRent",
+      position: "Frontend Developer",
+      duration: "2025",
     },
     {
       company: "ALX Africa (Project Works)",
@@ -113,11 +118,11 @@ const skills = {
     { icon: <SiNextdotjs />, name: "Next.js" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiExpress />, name: "Express.js" },
     { icon: <SiNestjs />, name: "Nest.js" },
-    { icon: <FaFigma />, name: "Figma" },
-    { icon: <SiExpress />, name: "Express.js" }, // if applicable
-    { icon: <SiDirectus />, name: "Directus" }, // from Stacksync
     { icon: <FaGitAlt />, name: "Git & GitHub" },
+    { icon: <FaFigma />, name: "Figma" },
+    { icon: <SiDirectus />, name: "Directus" },
   ],
 };
 
