@@ -18,17 +18,18 @@ export const projects = [
   {
     num: "02",
     category: "fullstack",
-    title: "YorubaFit",
+    title: "Educare",
     description:
-      "An AI-powered Yoruba Fila and Gele virtual try-on storefront that allows users to upload photos and visualize headwear before purchasing. Combines AI image processing with e-commerce functionality.",
+      "Built an API documentation site for a fictional School Management System using Next.js and Fumadocs, with auto-generated docs from an OpenAPI spec.",
     stack: [
-      { name: "NextJS" },
+      { name: "Next.js" },
+      { name: "Fumadocs" },
       { name: "TailwindCSS" },
       { name: "Typescript" },
     ],
-    image: "/assets/work/yorubafit.png",
-    live: "https://yorubafit.vercel.app", // add live link if deployed
-    github: "https://github.com/koredeycode/",
+    image: "/assets/work/educare.png",
+    live: "https://edu-care-docs.vercel.app/",
+    github: "https://github.com/koredeycode/educare",
   },
   {
     num: "03",
