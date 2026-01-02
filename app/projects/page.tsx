@@ -1,15 +1,16 @@
 "use client";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,10 +20,26 @@ import { projects } from "@/constants";
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const searchParams = useSearchParams();
+
   const handleSlideChange = (swiper: SwiperType) => {
     const currentIndex = swiper.activeIndex;
     setProject(projects[currentIndex]);
   };
+
+  useEffect(() => {
+    const title = searchParams.get("title");
+    if (title && swiper) {
+      const index = projects.findIndex(
+        (p) => p.title.toLowerCase() === title.toLowerCase()
+      );
+      if (index !== -1) {
+        swiper.slideTo(index);
+        setProject(projects[index]);
+      }
+    }
+  }, [searchParams, swiper]);
 
   return (
     <motion.section
@@ -37,12 +54,17 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              {/* <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
+              </div> */}
+              <div>
+                <span className="text-accent text-sm font-bold uppercase tracking-widest mb-2 block">
+                  {project.category} project
+                </span>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                  {project.title}
+                </h2>
               </div>
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.title}
-              </h2>
               <p className="text-white/60">{project.description}</p>
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => {
@@ -69,7 +91,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>}
                 
-                {project.github_api && <Link href={project.github_api}>
+                {project.github && <Link href={project.github} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -83,7 +105,7 @@ const Work = () => {
                 </Link>}
                 
                 {project.github_api && (
-                  <Link href={project.github_api}>
+                  <Link href={project.github_api} target="_blank" rel="noopener noreferrer">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -105,6 +127,7 @@ const Work = () => {
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
+              onSwiper={setSwiper}
             >
               {projects.map((project, index) => {
                 return (

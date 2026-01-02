@@ -37,7 +37,7 @@ export const projects = [
     title: "Wagr",
     description:
       "A decentralized betting platform where users can create, join, and settle wagers securely on-chain.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+    stack: [{ name: "Html 5" }, { name: "Tailwind CSS" }, { name: "Typescript" }, { name: "NextJS" }],
     image: "/assets/work/wagr.png",
     live: "https://wagr-web.vercel.app", // add live link if deployed
     github: "https://github.com/koredeycode/Wagr",
@@ -48,7 +48,7 @@ export const projects = [
     title: "IPVerse",
     description:
       "Blockchain-powered marketplace for buying and licensing intellectual property assets worldwide.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+    stack: [{ name: "NextJS" }, { name: "Tailwind CSS" }, { name: "Node.js" }],
     image: "/assets/work/ipverse.png",
     live: "https://ipverse.vercel.app/",
     github: "https://github.com/koredeycode/IPVerse",
@@ -59,7 +59,7 @@ export const projects = [
     title: "Union Tx Analyzer",
     description:
       "Helps Union Testnets users track their transactions and visualize activity in a clear dashboard.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
+    stack: [{ name: "NextJS" }, { name: "Tailwind CSS" }, { name: "Typescript" }],
     image: "/assets/work/union.png",
     live: "https://union-transaction-analyzer.vercel.app/", // put your deployed link here
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
