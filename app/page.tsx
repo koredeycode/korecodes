@@ -28,7 +28,7 @@ const Home = () => {
                 asChild
               >
                 <Link href="/projects">
-                  <span>See Projects</span>
+                  <span>View Projects</span>
                 </Link>
               </Button>
               <DownloadResumeButton />

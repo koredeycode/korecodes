@@ -10,7 +10,7 @@ export const projects = [
       { name: "NestJS" },
       { name: "PostgreSQL" },
     ],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/lendly.png",
     live: "", // Not deployed yet
     github: "https://github.com/koredeycode/lendly-mobile",
     github_api: "https://github.com/koredeycode/lendly-api",
