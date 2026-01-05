@@ -121,6 +121,13 @@ export const blogs = [
     url: "https://koredeycode.hashnode.dev/how-to-create-a-ussd-application-with-typescript-and-nodejs",
     image: "/assets/blogs/ussd.webp",
   },
+  {
+    title: "The Hidden Cost of npm install - And How To Fix It",
+    description:
+      "Tired of node_modules bloating your drive and slow install times? This guide analyzes the architectural limitations of npm and compares two superior alternatives: pnpm for maximum disk efficiency and Bun for blazing-fast performance. Learn how to migrate your projects and choose the right tool for your workflow.",
+    url: "https://koredeycode.hashnode.dev/the-hidden-cost-of-npm-install-and-how-to-fix-it",
+    image: "/assets/blogs/npm.webp",
+  },
 ];
 
 export const about = {
