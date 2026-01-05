@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
 
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
@@ -14,21 +15,46 @@ const WorkSliderBtns = ({
   iconStyles: string;
 }) => {
   const swiper = useSwiper();
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  useEffect(() => {
+    if (!swiper) return;
+
+    // Set initial state
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+
+    // Listen for slide changes
+    const handleSlideChange = () => {
+      setIsBeginning(swiper.isBeginning);
+      setIsEnd(swiper.isEnd);
+    };
+
+    swiper.on("slideChange", handleSlideChange);
+
+    return () => {
+      swiper.off("slideChange", handleSlideChange);
+    };
+  }, [swiper]);
+
   return (
     <div className={containerStyles}>
       <button
-        className={btnStyles}
+        className={`${btnStyles} ${isBeginning ? "opacity-40 cursor-not-allowed" : ""}`}
         onClick={() => {
-          swiper.slidePrev();
+          if (!isBeginning) swiper.slidePrev();
         }}
+        disabled={isBeginning}
       >
         <PiCaretLeftBold className={iconStyles} />
       </button>
       <button
-        className={btnStyles}
+        className={`${btnStyles} ${isEnd ? "opacity-40 cursor-not-allowed" : ""}`}
         onClick={() => {
-          swiper.slideNext();
+          if (!isEnd) swiper.slideNext();
         }}
+        disabled={isEnd}
       >
         <PiCaretRightBold className={iconStyles} />
       </button>
