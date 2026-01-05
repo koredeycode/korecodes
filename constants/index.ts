@@ -98,3 +98,27 @@ export const projects = [
 //     github: "https://github.com/koredeycode/nestmates",
 //   },
 ];
+
+export const blogs = [
+  {
+    title: "Deploy Directus to an Ubuntu Server",
+    description:
+      "Learn how to self-host Directus on an Ubuntu server using Docker and Nginx. This guide covers the entire process, from configuring background services to securing your production deployment with SSL.",
+    url: "https://directus.io/docs/tutorials/self-hosting/deploy-directus-to-an-ubuntu-server",
+    image: "/assets/blogs/ubuntu.jpeg",
+  },
+  {
+    title: "Guide to Exporting and Importing Data within Web5 Applications",
+    description:
+      "Master data portability in the decentralized web by learning to move records between applications. This tutorial demonstrates how to query, serialize, and transfer data across Decentralized Web Nodes (DWNs) using the Web5 JS SDK.",
+    url: "https://koredeycode.hashnode.dev/guide-to-exporting-and-importing-data-within-web5-applications",
+    image: "/assets/blogs/web5.webp",
+  },
+  {
+    title: "How to Create a USSD Application with TypeScript and Node.js",
+    description:
+      "Build interactive mobile USSD menus using Node.js and TypeScript. This walkthrough explains how to handle gateway requests and manage session logic to create seamless text-based services for feature phones.",
+    url: "https://koredeycode.hashnode.dev/how-to-create-a-ussd-application-with-typescript-and-nodejs",
+    image: "/assets/blogs/ussd.webp",
+  },
+];
