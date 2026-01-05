@@ -81,18 +81,38 @@ const Resume = () => {
         </div>
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col gap-6"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger className="p-4" value="experience">Experience</TabsTrigger>
-            <TabsTrigger className="p-4" value="education">Education</TabsTrigger>
-            <TabsTrigger className="p-4" value="skills">Skills</TabsTrigger>
-            <TabsTrigger className="p-4" value="about">About Me</TabsTrigger>
-            {/* <div className="flex justify-start"> */}
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+            <TabsList className="flex flex-row flex-wrap justify-center sm:justify-start gap-1 bg-white/5 p-1 rounded-lg flex-1">
+              <TabsTrigger 
+                className="flex-1 px-6 py-3 rounded-md text-base font-medium transition-all data-[state=active]:bg-accent data-[state=active]:text-primary data-[state=inactive]:text-white/60 hover:text-white" 
+                value="experience"
+              >
+                Experience
+              </TabsTrigger>
+              <TabsTrigger 
+                className="flex-1 px-6 py-3 rounded-md text-base font-medium transition-all data-[state=active]:bg-accent data-[state=active]:text-primary data-[state=inactive]:text-white/60 hover:text-white" 
+                value="education"
+              >
+                Education
+              </TabsTrigger>
+              <TabsTrigger 
+                className="flex-1 px-6 py-3 rounded-md text-base font-medium transition-all data-[state=active]:bg-accent data-[state=active]:text-primary data-[state=inactive]:text-white/60 hover:text-white" 
+                value="skills"
+              >
+                Skills
+              </TabsTrigger>
+              <TabsTrigger 
+                className="flex-1 px-6 py-3 rounded-md text-base font-medium transition-all data-[state=active]:bg-accent data-[state=active]:text-primary data-[state=inactive]:text-white/60 hover:text-white" 
+                value="about"
+              >
+                About Me
+              </TabsTrigger>
+            </TabsList>
             <DownloadResumeButton />
-            {/* </div> */}
-          </TabsList>
-          <div className="min-h-[70vh] w-full">
+          </div>
+          <div className="h-[60vh] w-full bg-white/5 rounded-xl p-6 sm:p-8 overflow-y-auto scrollbar-none">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
@@ -189,10 +209,10 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 w-full">
                   {about.info.map((item, index) => {
                     return (
                       <li

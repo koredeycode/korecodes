@@ -60,3 +60,13 @@ body {
 .text-outline-hover {
   -webkit-text-stroke: 1px #00ff99;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
