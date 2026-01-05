@@ -122,3 +122,92 @@ export const blogs = [
     image: "/assets/blogs/ussd.webp",
   },
 ];
+
+export const about = {
+  title: "About Me",
+  description:
+    "I'm Yusuf Akorede, a passionate full-stack developer with over three years of experience building web applications and scalable backend systems. I enjoy turning ideas into elegant solutions, focusing on clean code, performance, and great user experiences. I'm always open to exciting freelance opportunities and collaborations.",
+  info: [
+    { fieldName: "Name", fieldValue: "Yusuf Akorede" },
+    { fieldName: "Phone", fieldValue: "+234 81 3909 8183" },
+    { fieldName: "Experience", fieldValue: "3+ Years" },
+    { fieldName: "Nationality", fieldValue: "Nigerian" },
+    { fieldName: "Freelance", fieldValue: "Available" },
+    { fieldName: "Languages", fieldValue: "English" },
+  ],
+};
+
+export const experience = {
+  icon: "/assets/resume/badge.svg",
+  title: "Experience",
+  description:
+    "Full-Stack Software Developer with passion for building scalable web applications, integrating backend systems, and delivering performant UI solutions.",
+  items: [
+    {
+      company: "YorubaEcho",
+      position: "Backend Developer",
+      duration: "2025",
+    },
+    {
+      company: "SabiRent",
+      position: "Frontend Developer",
+      duration: "2025",
+    },
+    {
+      company: "ALX Africa (Project Works)",
+      position: "Software Engineering Intern",
+      duration: "2022 - 2023",
+    },
+    {
+      company: "Open-Source Contributions",
+      position: "Contributor",
+      duration: "2021 - Present",
+    },
+  ],
+};
+
+export const education = {
+  icon: "/assets/resume/cap.svg",
+  title: "Education",
+  description:
+    "A mix of formal study and self-driven learning, focusing on computer science, software engineering, and modern full-stack development.",
+  items: [
+    {
+      institution: "University of the People",
+      degree: "Bachelor of Science in Computer Science",
+      duration: "2025 - Present",
+    },
+    {
+      institution: "ALX Africa",
+      degree: "Software Engineering Program",
+      duration: "2023",
+    },
+    {
+      institution: "Alchemy University",
+      degree: "Web3 Development Bootcamp",
+      duration: "2023 - Present",
+    },
+  ],
+};
+
+export const skillsData = {
+  title: "Skills",
+  description:
+    "Technologies and tools I use to build performant, scalable web applications — from front-end interfaces to backend services and integrations.",
+  skillList: [
+    { iconName: "FaHtml5", name: "HTML5" },
+    { iconName: "FaCss3", name: "CSS3" },
+    { iconName: "FaJs", name: "JavaScript" },
+    { iconName: "SiTypescript", name: "TypeScript" },
+    { iconName: "FaReact", name: "React.js" },
+    { iconName: "SiExpo", name: "React Native + Expo" },
+    { iconName: "SiNextdotjs", name: "Next.js" },
+    { iconName: "SiTailwindcss", name: "Tailwind CSS" },
+    { iconName: "FaNodeJs", name: "Node.js" },
+    { iconName: "SiExpress", name: "Express.js" },
+    { iconName: "SiNestjs", name: "Nest.js" },
+    { iconName: "FaGitAlt", name: "Git & GitHub" },
+    { iconName: "FaFigma", name: "Figma" },
+    { iconName: "SiDirectus", name: "Directus" },
+  ],
+};

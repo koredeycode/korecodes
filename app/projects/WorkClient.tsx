@@ -51,6 +51,14 @@ const Work = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-6"
     >
       <div className="container mx-auto">
+        <div className="mb-12 text-center">
+          <h1 className="h2 mb-4">
+            My <span className="text-accent">Projects</span>
+          </h1>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            Here are some of my recent projects.
+          </p>
+        </div>
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">

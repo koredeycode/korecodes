@@ -1,6 +1,8 @@
 "use client";
 
+import { about, education, experience, skillsData } from "@/constants";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 import {
   FaCss3,
   FaFigma,
@@ -17,113 +19,34 @@ import {
   SiNestjs,
   SiNextdotjs,
   SiTailwindcss,
-  SiTypescript
+  SiTypescript,
 } from "react-icons/si";
 
-const about = {
-  title: "About Me",
-  description:
-    "I'm Yusuf Akorede, a passionate full-stack developer with over three years of experience building web applications and scalable backend systems. I enjoy turning ideas into elegant solutions, focusing on clean code, performance, and great user experiences. I'm always open to exciting freelance opportunities and collaborations.",
-  info: [
-    { fieldName: "Name", fieldValue: "Yusuf Akorede" },
-    { fieldName: "Phone", fieldValue: "+234 81 3909 8183" },
-    { fieldName: "Experience", fieldValue: "3+ Years" },
-    { fieldName: "Nationality", fieldValue: "Nigerian" },
-    { fieldName: "Freelance", fieldValue: "Available" },
-    { fieldName: "Languages", fieldValue: "English" },
-  ],
+// Icon mapping for skills
+const iconMap: Record<string, ReactNode> = {
+  FaHtml5: <FaHtml5 />,
+  FaCss3: <FaCss3 />,
+  FaJs: <FaJs />,
+  SiTypescript: <SiTypescript />,
+  FaReact: <FaReact />,
+  SiExpo: <SiExpo />,
+  SiNextdotjs: <SiNextdotjs />,
+  SiTailwindcss: <SiTailwindcss />,
+  FaNodeJs: <FaNodeJs />,
+  SiExpress: <SiExpress />,
+  SiNestjs: <SiNestjs />,
+  FaGitAlt: <FaGitAlt />,
+  FaFigma: <FaFigma />,
+  SiDirectus: <SiDirectus />,
 };
 
-const experience = {
-  icon: "/assets/resume/badge.svg",
-  title: "My Experience",
-  description:
-    "Full-Stack Software Developer with passion for building scalable web applications, integrating backend systems, and delivering performant UI solutions.",
-  items: [
-    {
-      company: "YorubaEcho",
-      position: "Backend Developer",
-      duration: "2025",
-    }, 
-    {
-      company: "SabiRent",
-      position: "Frontend Developer",
-      duration: "2025",
-    },
-    {
-      company: "ALX Africa (Project Works)",
-      position: "Software Engineering Intern",
-      duration: "2022 - 2023",
-    },
-    {
-      company: "Open-Source Contributions",
-      position: "Contributor",
-      duration: "2021 - Present",
-    },
-  ],
-};
-
-const education = {
-  icon: "/assets/resume/cap.svg",
-  title: "My Education",
-  description:
-    "A mix of formal study and self-driven learning, focusing on computer science, software engineering, and modern full-stack development.",
-  items: [
-    {
-      institution: "University of the People",
-      degree: "Bachelor of Science in Computer Science",
-      duration: "2025 - Present",
-    },
-    {
-      institution: "ALX Africa",
-      degree: "Software Engineering Program",
-      duration: "2023",
-    },
-    {
-      institution: "Alchemy University",
-      degree: "Web3 Development Bootcamp",
-      duration: "2023 - Present",
-    },
-  ],
-};
-
-// const skills = {
-//   title: "My skills",
-//   description:
-//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   skillList: [
-//     { icon: <FaHtml5 />, name: "html 5" },
-//     { icon: <FaCss3 />, name: "css 3" },
-//     { icon: <FaJs />, name: "javascript" },
-//     { icon: <FaReact />, name: "react.js" },
-//     { icon: <SiNextdotjs />, name: "next.js" },
-//     { icon: <FaHtml5 />, name: "html 5" },
-//     { icon: <SiTailwindcss />, name: "tailwind.css" },
-//     { icon: <FaNodeJs />, name: "node.js" },
-//     { icon: <FaFigma />, name: "figma" },
-//   ],
-// };
-
+// Build skills with actual icons
 const skills = {
-  title: "My Skills",
-  description:
-    "Technologies and tools I use to build performant, scalable web applications — from front-end interfaces to backend services and integrations.",
-  skillList: [
-    { icon: <FaHtml5 />, name: "HTML5" },
-    { icon: <FaCss3 />, name: "CSS3" },
-    { icon: <FaJs />, name: "JavaScript" },
-    { icon: <SiTypescript />, name: "TypeScript" },
-    { icon: <FaReact />, name: "React.js" },
-    { icon: <SiExpo />, name: "React Native + Expo" },
-    { icon: <SiNextdotjs />, name: "Next.js" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiExpress />, name: "Express.js" },
-    { icon: <SiNestjs />, name: "Nest.js" },
-    { icon: <FaGitAlt />, name: "Git & GitHub" },
-    { icon: <FaFigma />, name: "Figma" },
-    { icon: <SiDirectus />, name: "Directus" },
-  ],
+  ...skillsData,
+  skillList: skillsData.skillList.map((skill) => ({
+    ...skill,
+    icon: iconMap[skill.iconName],
+  })),
 };
 
 import DownloadResumeButton from "@/components/DownloadResumeButton";
@@ -135,9 +58,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-// import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
-// import {ScrollArea} from "@/components/ui/scroll-area"
 
 const Resume = () => {
   return (
@@ -150,15 +71,23 @@ const Resume = () => {
       className="min-h-[80vh] flex item-center justify-center py-12 xl:py-8"
     >
       <div className="container mx-auto">
+        <div className="mb-12 text-center">
+          <h1 className="h2 mb-4">
+            My <span className="text-accent">Resume</span>
+          </h1>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            Here is a summary of my professional experience and skills.
+          </p>
+        </div>
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About Me</TabsTrigger>
+            <TabsTrigger className="p-4" value="experience">Experience</TabsTrigger>
+            <TabsTrigger className="p-4" value="education">Education</TabsTrigger>
+            <TabsTrigger className="p-4" value="skills">Skills</TabsTrigger>
+            <TabsTrigger className="p-4" value="about">About Me</TabsTrigger>
             {/* <div className="flex justify-start"> */}
             <DownloadResumeButton />
             {/* </div> */}
