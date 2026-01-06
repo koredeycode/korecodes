@@ -8,8 +8,8 @@ import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 
 const info = [
   { icon: <FaEnvelope />, title: "Email", description: "koredey4u@gmail.com" },
-  // { icon: <FaPhoneAlt />, title: "Phone", description: "08139098183" },
-  // { icon: <FaMapMarkedAlt />, title: "Address", description: "Ikirun, Osun State, Nigeria" },
+  { icon: <FaPhoneAlt />, title: "Phone", description: "+234 813 909 8183" },
+  { icon: <FaMapMarkedAlt />, title: "Location", description: "Nigeria" },
 ];
 
 const Contact = () => {

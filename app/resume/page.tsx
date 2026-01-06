@@ -112,14 +112,14 @@ const Resume = () => {
             </TabsList>
             <DownloadResumeButton />
           </div>
-          <div className="h-[60vh] w-full bg-white/5 rounded-xl p-6 sm:p-8 overflow-y-auto scrollbar-none">
+          <ScrollArea className="h-[60vh] w-full bg-white/5 rounded-xl p-6 sm:p-8">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                {/* <ScrollArea className="h-[400px]"> */}
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
@@ -139,7 +139,7 @@ const Resume = () => {
                       );
                     })}
                   </ul>
-                </ScrollArea>
+                {/* </ScrollArea> */}
               </div>
             </TabsContent>
             <TabsContent value="education" className="w-full">
@@ -148,7 +148,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                {/* <ScrollArea className="h-[400px]"> */}
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => {
                       return (
@@ -168,7 +168,7 @@ const Resume = () => {
                       );
                     })}
                   </ul>
-                </ScrollArea>
+                {/* </ScrollArea> */}
               </div>
             </TabsContent>
 
@@ -207,29 +207,29 @@ const Resume = () => {
               value="about"
               className="w-full h-full"
             >
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                </div>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 w-full">
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                   {about.info.map((item, index) => {
                     return (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4 "
+                        className="bg-[#232329] h-[120px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
+                        <span className="text-accent">{item.fieldName}</span>
+                        <h3 className="text-xl text-center lg:text-left">
+                          {item.fieldValue}
+                        </h3>
                       </li>
                     );
                   })}
                 </ul>
               </div>
             </TabsContent>
-          </div>
+          </ScrollArea>
         </Tabs>
       </div>
     </motion.div>

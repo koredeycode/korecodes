@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     num: "02",
-    category: "fullstack",
+    category: "frontend",
     title: "Educare",
     description:
       "Built an API documentation site for a fictional School Management System using Next.js and Fumadocs, with auto-generated docs from an OpenAPI spec.",
@@ -162,7 +162,7 @@ export const experience = {
     },
     {
       company: "ALX Africa (Project Works)",
-      position: "Software Engineering Intern",
+      position: "Engineering Intern",
       duration: "2022 - 2023",
     },
     {
