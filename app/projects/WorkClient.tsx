@@ -71,7 +71,7 @@ const Work = () => {
                 </h2>
               </div>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
@@ -153,7 +153,7 @@ const Work = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div className="h-[300px] sm:h-[400px] xl:h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       <div className="relative h-full w-full">
                         <Image
@@ -164,9 +164,9 @@ const Work = () => {
                         />
                       </div>
                     <WorkSliderBtns
-                      containerStyles="flex gap-2 absolute left-1/2 -translate-x-1/2 bottom-4 z-20 justify-center"
+                      containerStyles="flex gap-2 absolute left-1/2 -translate-x-1/2 bottom-2 sm:bottom-4 z-20 justify-center"
                       iconStyles=""
-                      btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                      btnStyles="bg-accent hover:bg-accent-hover text-primary text-[18px] sm:text-[22px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] flex justify-center items-center transition-all"
                     />
                     </div>
                   </SwiperSlide>

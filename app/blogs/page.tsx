@@ -21,8 +21,7 @@ const BlogsPage = () => {
             My <span className="text-accent">Blog</span> Articles
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto">
-            I write about web development, backend systems, and emerging technologies. 
-            Here are some of my recent articles.
+            Here are some of my recent technical writings.
           </p>
         </div>
 
