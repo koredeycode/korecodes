@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Fira_Code, Poppins } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -44,6 +46,7 @@ export default function RootLayout({
         {/* <CurtainTransition /> */}
 
         <PageTransition>{children}</PageTransition>
+        <Analytics />
       </body>
     </html>
   );
