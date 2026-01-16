@@ -1,4 +1,5 @@
-"use client";
+"use client"
+import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
   TooltipContent,
@@ -12,11 +13,51 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import {
+  FaCss3,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact
+} from "react-icons/fa";
+import {
+  SiDirectus,
+  SiExpo,
+  SiExpress,
+  SiNestjs,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTypescript
+} from "react-icons/si";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
 
 import { projects } from "@/constants";
+
+// Icon mapping
+const stackIcons: { [key: string]: React.ReactNode } = {
+  "Html 5": <FaHtml5 />,
+  "HTML5": <FaHtml5 />,
+  "Css 3": <FaCss3 />,
+  "CSS3": <FaCss3 />,
+  "JavaScript": <FaJs />,
+  "Typescript": <SiTypescript />,
+  "React.js": <FaReact />,
+  "React Native": <SiExpo />,
+  "Next.js": <SiNextdotjs />,
+  "NextJS": <SiNextdotjs />,
+  "Tailwind CSS": <SiTailwindcss />,
+  "TailwindCSS": <SiTailwindcss />,
+  "Node.js": <FaNodeJs />,
+  "Express.js": <SiExpress />,
+  "NestJS": <SiNestjs />,
+  "Nest.js": <SiNestjs />,
+  "PostgreSQL": <SiPostgresql />,
+  "Fumadocs": <SiNextdotjs />, // Fallback or specific icon if available
+  "Directus": <SiDirectus />,
+};
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -71,16 +112,23 @@ const Work = () => {
                 </h2>
               </div>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex flex-wrap gap-4">
+              
+              {/* Stack Badges */}
+              <div className="flex flex-wrap gap-2">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <Badge 
+                      key={index} 
+                      variant="accent" 
+                      className="text-base px-3 py-1 gap-2 bg-accent/10 border-accent/20 text-accent hover:bg-accent/20"
+                    >
+                      {stackIcons[item.name] && <span className="text-lg">{stackIcons[item.name]}</span>}
                       {item.name}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
+                    </Badge>
                   );
                 })}
-              </ul>
+              </div>
+
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
                 {project.live && (
