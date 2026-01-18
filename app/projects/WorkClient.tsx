@@ -21,14 +21,17 @@ import {
   FaReact
 } from "react-icons/fa";
 import {
+  SiAppwrite,
   SiDirectus,
   SiExpo,
   SiExpress,
   SiNestjs,
   SiNextdotjs,
   SiPostgresql,
+  SiSolidity,
   SiTailwindcss,
-  SiTypescript
+  SiTypescript,
+  SiVite
 } from "react-icons/si";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,7 +46,7 @@ const stackIcons: { [key: string]: React.ReactNode } = {
   "Css 3": <FaCss3 />,
   "CSS3": <FaCss3 />,
   "JavaScript": <FaJs />,
-  "Typescript": <SiTypescript />,
+  "TypeScript": <SiTypescript />,
   "React.js": <FaReact />,
   "React Native": <SiExpo />,
   "Next.js": <SiNextdotjs />,
@@ -57,6 +60,10 @@ const stackIcons: { [key: string]: React.ReactNode } = {
   "PostgreSQL": <SiPostgresql />,
   "Fumadocs": <SiNextdotjs />, // Fallback or specific icon if available
   "Directus": <SiDirectus />,
+  "Vite": <SiVite />,
+  "Appwrite": <SiAppwrite />,
+  "Plasmo": <SiVite />,
+  "Solidity": <SiSolidity />,
 };
 
 const Work = () => {

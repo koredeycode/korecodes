@@ -9,6 +9,7 @@ export const projects = [
       { name: "React Native" },
       { name: "NestJS" },
       { name: "PostgreSQL" },
+      { name: "TypeScript" },
     ],
     image: "/assets/work/lendly.png",
     live: "", // Not deployed yet
@@ -24,8 +25,8 @@ export const projects = [
     stack: [
       { name: "Next.js" },
       { name: "Fumadocs" },
+      { name: "TypeScript" },
       { name: "TailwindCSS" },
-      { name: "Typescript" },
     ],
     image: "/assets/work/educare.png",
     live: "https://edu-care-docs.vercel.app/",
@@ -33,33 +34,49 @@ export const projects = [
   },
   {
     num: "03",
+    category: "frontend",
+    title: "X Articles Exporter",
+    description:
+      "A privacy-focused browser extension that allows you to save your favorite long-form content from X.com as clean, readable, and printable PDF documents.",
+    stack: [
+      { name: "React.js" },
+      { name: "Vite" },
+      { name: "Plasmo" },
+      { name: "TypeScript" },
+    ],
+    image: "/assets/work/article-exporter.png",
+    live: "https://x-articles-exporter.vercel.app/",
+    github: "https://github.com/koredeycode/x-articles-exporter",
+  },
+  {
+    num: "04",
     category: "fullstack",
     title: "Wagr",
     description:
       "A decentralized betting platform where users can create, join, and settle wagers securely on-chain.",
-    stack: [{ name: "Html 5" }, { name: "Tailwind CSS" }, { name: "Typescript" }, { name: "NextJS" }],
+    stack: [ { name: "NextJS" },  { name: "TypeScript" }, { name: "Tailwind CSS" }, { name: "Solidity" }],
     image: "/assets/work/wagr.png",
     live: "https://wagr-web.vercel.app", // add live link if deployed
     github: "https://github.com/koredeycode/Wagr",
   },
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "IPVerse",
     description:
       "Blockchain-powered marketplace for buying and licensing intellectual property assets worldwide.",
-    stack: [{ name: "NextJS" }, { name: "Tailwind CSS" }, { name: "Node.js" }],
+    stack: [{ name: "NextJS" }, { name: "Tailwind CSS" }, { name: "Node.js" }, { name: "Appwrite" }],
     image: "/assets/work/ipverse.png",
     live: "https://ipverse.vercel.app/",
     github: "https://github.com/koredeycode/IPVerse",
   },
   {
-    num: "05",
+    num: "06",
     category: "frontend",
     title: "Union Tx Analyzer",
     description:
       "Helps Union Testnets users track their transactions and visualize activity in a clear dashboard.",
-    stack: [{ name: "NextJS" }, { name: "Tailwind CSS" }, { name: "Typescript" }],
+    stack: [{ name: "NextJS" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
     image: "/assets/work/union.png",
     live: "https://union-transaction-analyzer.vercel.app/", // put your deployed link here
     github: "https://github.com/koredeycode/Union-Transaction-Analyzer",
