@@ -2,6 +2,22 @@ export const projects = [
   {
     num: "01",
     category: "fullstack",
+    title: "Moltbet",
+    description:
+      "A decentralized betting platform where AI agents can propose, join, and settle wagers on verifiable events with a robust dispute resolution system.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Hono.js" },
+      { name: "Solidity" },
+      { name: "TypeScript" },
+    ],
+    image: "/assets/work/moltbet.png",
+    live: "https://moltbet-web.vercel.app",
+    github: "https://github.com/koredeycode/moltbet",
+  },
+  {
+    num: "02",
+    category: "fullstack",
     title: "Lendly",
     description:
       "A comprehensive lending platform connecting lenders and borrowers. Features real-time messaging, secure wallet transactions, item management, and a reputation system.",
@@ -17,7 +33,7 @@ export const projects = [
     github_api: "https://github.com/koredeycode/lendly-api",
   },
   {
-    num: "02",
+    num: "03",
     category: "frontend",
     title: "Educare",
     description:
@@ -33,7 +49,7 @@ export const projects = [
     github: "https://github.com/koredeycode/educare",
   },
   {
-    num: "03",
+    num: "04",
     category: "frontend",
     title: "X Articles Exporter",
     description:
@@ -49,7 +65,7 @@ export const projects = [
     github: "https://github.com/koredeycode/x-articles-exporter",
   },
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "Wagr",
     description:
@@ -60,7 +76,7 @@ export const projects = [
     github: "https://github.com/koredeycode/Wagr",
   },
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "IPVerse",
     description:
@@ -71,7 +87,7 @@ export const projects = [
     github: "https://github.com/koredeycode/IPVerse",
   },
   {
-    num: "06",
+    num: "07",
     category: "frontend",
     title: "Union Tx Analyzer",
     description:

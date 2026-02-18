@@ -31,7 +31,7 @@ import {
   SiSolidity,
   SiTailwindcss,
   SiTypescript,
-  SiVite
+  SiVite, SiHono
 } from "react-icons/si";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -64,6 +64,7 @@ const stackIcons: { [key: string]: React.ReactNode } = {
   "Appwrite": <SiAppwrite />,
   "Plasmo": <SiVite />,
   "Solidity": <SiSolidity />,
+  "Hono.js": <SiHono />,
 };
 
 const Work = () => {
