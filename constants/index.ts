@@ -18,6 +18,37 @@ export const projects = [
   {
     num: "02",
     category: "fullstack",
+    title: "Nestmates",
+    description:
+      "Connects tenants with potential roommates, simplifying shared living arrangements.",
+    stack: [
+      { name: "Vite" },
+      { name: "Express.js" },
+      { name: "Expo" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/thumb3.png",
+    live: "https://nestmates-web.onrender.com",
+    github: "https://github.com/koredeycode/nestmates",
+  },
+  {
+    num: "03",
+    category: "fullstack",
+    title: "CinemaX",
+    description:
+      "A full-stack cinema booking application featuring real-time seat selection, secure payments, and QR ticket generation.",
+    stack: [
+        { name: "Next.js" },
+        { name: "MongoDB" },
+        { name: "TypeScript" },
+    ],
+    image: "/assets/work/thumb2.png",
+    live: "https://cinemax-tl4h.onrender.com",
+    github: "https://github.com/koredeycode/cinemax",
+  },
+  {
+    num: "04",
+    category: "fullstack",
     title: "Lendly",
     description:
       "A comprehensive lending platform connecting lenders and borrowers. Features real-time messaging, secure wallet transactions, item management, and a reputation system.",
@@ -33,7 +64,7 @@ export const projects = [
     github_api: "https://github.com/koredeycode/lendly-api",
   },
   {
-    num: "03",
+    num: "05",
     category: "frontend",
     title: "Educare",
     description:
@@ -49,7 +80,7 @@ export const projects = [
     github: "https://github.com/koredeycode/educare",
   },
   {
-    num: "04",
+    num: "06",
     category: "frontend",
     title: "X Articles Exporter",
     description:
@@ -65,7 +96,7 @@ export const projects = [
     github: "https://github.com/koredeycode/x-articles-exporter",
   },
   {
-    num: "05",
+    num: "07",
     category: "fullstack",
     title: "Wagr",
     description:
@@ -76,7 +107,7 @@ export const projects = [
     github: "https://github.com/koredeycode/Wagr",
   },
   {
-    num: "06",
+    num: "08",
     category: "fullstack",
     title: "IPVerse",
     description:
@@ -87,7 +118,7 @@ export const projects = [
     github: "https://github.com/koredeycode/IPVerse",
   },
   {
-    num: "07",
+    num: "09",
     category: "frontend",
     title: "Union Tx Analyzer",
     description:

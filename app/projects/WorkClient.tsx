@@ -25,13 +25,14 @@ import {
   SiDirectus,
   SiExpo,
   SiExpress,
+  SiHono, SiMongodb,
   SiNestjs,
   SiNextdotjs,
   SiPostgresql,
   SiSolidity,
   SiTailwindcss,
   SiTypescript,
-  SiVite, SiHono
+  SiVite
 } from "react-icons/si";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -65,6 +66,8 @@ const stackIcons: { [key: string]: React.ReactNode } = {
   "Plasmo": <SiVite />,
   "Solidity": <SiSolidity />,
   "Hono.js": <SiHono />,
+  "MongoDB": <SiMongodb />,
+  "Expo": <SiExpo />,
 };
 
 const Work = () => {
