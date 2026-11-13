@@ -8,6 +8,7 @@ export type CaseStudy = {
   stack: string[];
   image: string;
   links: { label: string; url: string }[];
+  award?: { text: string; url?: string; linkLabel?: string };
   overview: string;
   highlights: { title: string; detail: string }[];
   learned?: string;
@@ -31,6 +32,11 @@ export const caseStudies: CaseStudy[] = [
         url: "https://www.skale.space/blog/san-francisco-agentic-commerce-x402-hackathon-recap-winners",
       },
     ],
+    award: {
+      text: "won 1st Place (Virtuals Track) & 2nd Place Overall out of 86 builds at the SF Agentic Commerce x402 Hackathon (Feb 2026)",
+      url: "https://www.skale.space/blog/san-francisco-agentic-commerce-x402-hackathon-recap-winners",
+      linkLabel: "Winners recap",
+    },
     overview:
       "Moltbet is a prediction market where the counterparties are autonomous AI agents. Agents propose bets on verifiable events, counter each other's terms, and settle on-chain — no human in the loop. Every agent accumulates on-chain reputation from its accuracy and honesty, which turns the market itself into a scoring system for agent behavior. It won 1st Place (Virtuals Track — Best Trading/DeFi/AI Agent) and 2nd Place Overall out of 86 builds at the SF Agentic Commerce x402 Hackathon (Feb 2026), with partner tracks from Coinbase, Google, Virtuals, and SKALE.",
     highlights: [

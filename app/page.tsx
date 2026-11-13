@@ -56,27 +56,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* award strip */}
-        <div className="border-y border-border bg-card/50">
-          <div className="container mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-center">
-            <span className="text-lg leading-none">🏆</span>
-            <span className="text-muted">
-              <span className="text-foreground font-medium">Moltbet</span> won
-              1st Place (Virtuals Track) & 2nd Overall of{" "}
-              <span className="text-foreground font-medium">86 builds</span> at
-              the SF Agentic Commerce x402 Hackathon
-            </span>
-            <a
-              href="https://www.skale.space/blog/san-francisco-agentic-commerce-x402-hackathon-recap-winners"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent-hover inline-flex items-center gap-1 font-medium"
-            >
-              Winners recap <BsArrowUpRight />
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* --------------------------- FEATURED WORK --------------------------- */}

@@ -48,9 +48,30 @@ const CaseStudyPage = async ({
         </Link>
         <p className="section-title mb-3">{cs.category}</p>
         <h1 className="h1 mb-4">{cs.title}</h1>
-        <p className="text-muted text-lg mb-10 max-w-2xl leading-relaxed">
+        <p className="text-muted text-lg mb-8 max-w-2xl leading-relaxed">
           {cs.tagline}
         </p>
+
+        {/* award band */}
+        {cs.award && (
+          <div className="rounded-2xl border border-accent/40 bg-accent/5 px-6 py-5 mb-10 flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <span className="text-2xl leading-none">🏆</span>
+            <p className="text-sm text-muted flex-1 leading-relaxed">
+              <span className="text-foreground font-medium">{cs.title}</span>{" "}
+              {cs.award.text}
+            </p>
+            {cs.award.url && (
+              <a
+                href={cs.award.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-hover inline-flex items-center gap-1 font-medium text-sm shrink-0"
+              >
+                {cs.award.linkLabel ?? "Read more"} <BsArrowUpRight />
+              </a>
+            )}
+          </div>
+        )}
 
         {/* meta */}
         <dl className="grid grid-cols-2 sm:grid-cols-3 gap-6 border-y border-border py-6 mb-12 text-sm">
