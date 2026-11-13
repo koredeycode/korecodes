@@ -13,14 +13,14 @@ const BlogsPage = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-6"
+      className="min-h-screen flex flex-col justify-center py-12 xl:px-6"
     >
       <div className="container mx-auto">
         <div className="mb-12 text-center">
           <h1 className="h2 mb-4">
             My <span className="text-accent">Blog</span> Articles
           </h1>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Here are some of my recent technical writings.
           </p>
         </div>
@@ -35,7 +35,7 @@ const BlogsPage = () => {
                 y: 0,
                 transition: { delay: 2.4 + index * 0.1, duration: 0.4 },
               }}
-              className="group relative bg-white/5 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300"
+              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300"
             >
               <Link
                 href={blog.url}
@@ -56,10 +56,10 @@ const BlogsPage = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
                     {blog.title}
                   </h3>
-                  <p className="text-white/60 text-sm line-clamp-3 mb-4">
+                  <p className="text-muted text-sm line-clamp-3 mb-4">
                     {blog.description}
                   </p>
 

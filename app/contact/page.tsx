@@ -1,20 +1,32 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { FiArrowUpRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { motion } from "framer-motion";
-// import { useState } from "react";
-import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
+
+import Socials from "@/components/Socials";
 
 const info = [
-  { icon: <FaEnvelope />, title: "Email", description: "koredey4u@gmail.com" },
-  { icon: <FaPhoneAlt />, title: "Phone", description: "+234 813 909 8183" },
-  { icon: <FaMapMarkedAlt />, title: "Location", description: "Nigeria" },
+  {
+    icon: <FiMail />,
+    title: "Email",
+    description: "koredey4u@gmail.com",
+    href: "mailto:koredey4u@gmail.com",
+  },
+  {
+    icon: <FiPhone />,
+    title: "Phone",
+    description: "+234 813 909 8183",
+    href: "tel:+2348139098183",
+  },
+  {
+    icon: <FiMapPin />,
+    title: "Location",
+    description: "Nigeria (GMT+1)",
+  },
 ];
 
 const Contact = () => {
-  // const [service, setService] = useState("");
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -24,8 +36,6 @@ const Contact = () => {
         .value,
       lastname: (form.elements.namedItem("lastname") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      // phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      // service,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
     };
@@ -52,82 +62,133 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-6"
+      className="min-h-screen flex items-center py-12 xl:px-6"
     >
       <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h1 className="h2 mb-4">
-            Contact <span className="text-accent">Me</span>
-          </h1>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            Fill out the form below and I'll get back to you as soon as possible.
-          </p>
-        </div>
-        <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* form */}
-          <div className="xl:w-[54%] order-2 xl:order-none">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16">
+          {/* left: intro + info */}
+          <div className="flex-1">
+            <p className="section-title mb-3">Contact</p>
+            <h1 className="h2 mb-5">
+              Tell me what
+              <br />
+              you&apos;re <span className="text-accent">building.</span>
+            </h1>
+            <p className="text-muted max-w-md leading-relaxed mb-8">
+              Open to freelance work, collaborations, and full-time AI
+              engineering roles. The form goes straight to my inbox — or reach
+              me directly through any of these.
+            </p>
+
+            {/* availability */}
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 mb-10">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
+              </span>
+              <span className="text-sm font-medium">
+                Available for freelance &amp; full-time
+              </span>
+            </div>
+
+            {/* info cards */}
+            <ul className="grid sm:grid-cols-2 gap-4 mb-10 max-w-xl">
+              {info.map((item, index) => (
+                <li
+                  key={index}
+                  className="rounded-2xl border border-border bg-card p-5 flex items-center gap-4 hover:border-accent/40 transition-colors"
+                >
+                  <div className="w-11 h-11 shrink-0 rounded-full border border-border text-accent flex items-center justify-center text-lg">
+                    {item.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-muted text-xs uppercase tracking-wider">
+                      {item.title}
+                    </p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="font-medium text-sm hover:text-accent transition-colors inline-flex items-center gap-1 break-all"
+                      >
+                        {item.description}
+                        <FiArrowUpRight className="shrink-0" />
+                      </a>
+                    ) : (
+                      <p className="font-medium text-sm">{item.description}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center gap-5">
+              <span className="text-muted text-sm">Elsewhere:</span>
+              <Socials
+                containerStyles="flex gap-3"
+                iconStyles="w-10 h-10 border border-border rounded-full flex justify-center items-center text-lg hover:border-accent hover:text-accent transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          {/* right: form */}
+          <div className="xl:w-[46%] w-full">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              className="rounded-2xl border border-border bg-card p-7 xl:p-9 flex flex-col gap-5"
             >
-              <h3 className="text-xl text-accent">Let's work together</h3>
-              {/* input */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input name="firstname" placeholder="Firstname" required />
-                <Input name="lastname" placeholder="Lastname" />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email address"
-                  required
-                  className="md:col-span-2"
-                />
-                {/* <Input name="phone" type="tel" placeholder="Phone number" /> */}
+              <h3 className="h3 mb-1">
+                Send a <span className="text-accent">message</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="firstname"
+                    className="text-xs text-muted uppercase tracking-wider"
+                  >
+                    Firstname *
+                  </label>
+                  <Input id="firstname" name="firstname" required />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="lastname"
+                    className="text-xs text-muted uppercase tracking-wider"
+                  >
+                    Lastname
+                  </label>
+                  <Input id="lastname" name="lastname" />
+                </div>
               </div>
-              {/* select  */}
-              {/* <Select onValueChange={setService}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service"></SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select> */}
-              {/* textarea */}
-              <Textarea
-                name="message"
-                className="h-[200px]"
-                placeholder="Type your message here."
-              />
-
-              {/* btn  */}
-              <Button type="submit" size="md" className="max-w-40">
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="email"
+                  className="text-xs text-muted uppercase tracking-wider"
+                >
+                  Email address *
+                </label>
+                <Input id="email" name="email" type="email" required />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="message"
+                  className="text-xs text-muted uppercase tracking-wider"
+                >
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  className="h-[180px]"
+                  placeholder="What are you building, and where do I fit in?"
+                />
+              </div>
+              <button
+                type="submit"
+                className="mt-1 px-7 py-3.5 rounded-full bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+              >
                 Send message
-              </Button>
+              </button>
             </form>
-          </div>
-          {/* info */}
-          <div className="flex-1 flex items-start xl:justify-between order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
-              {info.map((item, index) => {
-                return (
-                  <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:[h-72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
         </div>
       </div>

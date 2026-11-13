@@ -4,24 +4,35 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { name: "home", path: "/" },
-  // { name: "services", path: "/services" },
-  { name: "projects", path: "/projects" },
+  { name: "work", path: "/#work" },
+  { name: "projects", path: "/#projects" },
   { name: "blogs", path: "/blogs" },
-  { name: "resume", path: "/resume" },
-  { name: "contact", path: "/contact" },
+  { name: "about", path: "/#about" },
+  { name: "contact", path: "/#contact" },
 ];
+
+const isActive = (path: string, pathname: string) => {
+  if (path === "/") return pathname === "/";
+  if (path === "/blogs") return pathname.startsWith("/blogs");
+  if (path === "/#work") return pathname.startsWith("/work/");
+  return false; // hash links only "active" while scrolling on home
+};
+
 const Nav = () => {
   const pathname = usePathname();
   return (
-    <nav className="flex gap-8">
+    <nav className="flex items-center gap-1">
       {links.map((link, index) => {
+        const active = isActive(link.path, pathname);
         return (
           <Link
             key={index}
             href={link.path}
-            className={`${
-              link.path == pathname && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all`}
+            className={`capitalize font-medium rounded-full px-4 py-2 transition-all text-sm ${
+              active
+                ? "bg-accent/10 text-accent"
+                : "text-muted hover:text-foreground hover:bg-foreground/5"
+            }`}
           >
             {link.name}
           </Link>

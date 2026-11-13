@@ -1,8 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Photo = () => {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
   return (
     <div className="w-full h-full relative">
       <motion.div
@@ -18,7 +25,9 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className={`w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute ${
+            mounted && resolvedTheme === "light" ? "" : "mix-blend-lighten"
+          }`}
         >
           <Image
             src="/assets/photo.png"
@@ -40,7 +49,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#38bdf8"
+            style={{ stroke: "var(--accent)" }}
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

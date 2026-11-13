@@ -1,26 +1,39 @@
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import Nav from "./Nav";
-import { Button } from "./ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
-    <header className="text-white w-full fixed top-0 z-50">
-      <div className="min-h-8 container mx-auto flex justify-between items-center p-[15px] bg-accent-hover/20 backdrop-blur-md md:rounded-xl rounded-none">
-        <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            <span className="text-accent">{"{"}</span>K
-            <span className="text-accent">{"}"}</span>
-          </h1>
-        </Link>
-        <div className="hidden xl:flex items-center gap-8">
-          <Nav />
-          <Link href="/contact">
-            <Button>Hire me</Button>
+    <header className="w-full fixed top-0 z-50 text-foreground">
+      <div className="container mx-auto px-4 pt-3">
+        <div className="glass md:rounded-full rounded-2xl px-5 py-3 shadow-sm flex justify-between items-center gap-4">
+          <Link href="/" className="flex items-center gap-3 shrink-0">
+            <span className="text-3xl xl:text-4xl font-semibold leading-none">
+              <span className="text-accent">{"{"}</span>K
+              <span className="text-accent">{"}"}</span>
+            </span>
+            <span className="hidden sm:block text-xl font-semibold text-foreground tracking-wide leading-tight">
+              Korecodes
+            </span>
           </Link>
-        </div>
-        <div className="xl:hidden">
-          <MobileNav />
+
+          <div className="hidden xl:block">
+            <Nav />
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <ThemeToggle />
+            <Link
+              href="/#contact"
+              className="hidden sm:inline-flex px-5 py-2 rounded-full bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors"
+            >
+              Hire me
+            </Link>
+            <div className="xl:hidden">
+              <MobileNav />
+            </div>
+          </div>
         </div>
       </div>
     </header>
