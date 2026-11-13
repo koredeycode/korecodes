@@ -1,8 +1,15 @@
 "use client";
 
-import { about, education, experience, skillsData } from "@/constants";
+import DownloadResumeButton from "@/components/DownloadResumeButton";
+import { education, experience, skillsData } from "@/constants";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import {
+  FiArrowUpRight,
+  FiAward,
+  FiBookOpen,
+  FiCode,
+} from "react-icons/fi";
 import { FaGitAlt, FaJs, FaPython, FaReact } from "react-icons/fa";
 import {
   SiDocker,
@@ -54,16 +61,10 @@ const skills = {
   })),
 };
 
-import DownloadResumeButton from "@/components/DownloadResumeButton";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
+// Verified certificate links by institution
+const certLinks: Record<string, string> = {
+  "ALX Africa": "https://intranet.alxswe.com/certificates/XpCFNxyrEP",
+};
 
 const Resume = () => {
   return (
@@ -75,167 +76,114 @@ const Resume = () => {
       }}
       className="min-h-screen flex flex-col justify-center py-12 xl:px-6"
     >
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h1 className="h2 mb-4">
-            My <span className="text-accent">Resume</span>
-          </h1>
-          <p className="text-muted max-w-2xl mx-auto">
-            Here is a summary of my professional experience and skills.
-          </p>
-        </div>
-        <Tabs
-          defaultValue="experience"
-          className="flex flex-col gap-6"
-        >
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
-            <TabsList className="flex flex-row flex-wrap justify-center sm:justify-start gap-1 bg-foreground/5 p-1 rounded-lg flex-1">
-              <TabsTrigger 
-                className="flex-1 px-6 py-3 rounded-md text-base font-medium" 
-                value="experience"
-              >
-                Experience
-              </TabsTrigger>
-              <TabsTrigger 
-                className="flex-1 px-6 py-3 rounded-md text-base font-medium" 
-                value="education"
-              >
-                Education
-              </TabsTrigger>
-              <TabsTrigger 
-                className="flex-1 px-6 py-3 rounded-md text-base font-medium" 
-                value="skills"
-              >
-                Skills
-              </TabsTrigger>
-              <TabsTrigger 
-                className="flex-1 px-6 py-3 rounded-md text-base font-medium" 
-                value="about"
-              >
-                About Me
-              </TabsTrigger>
-            </TabsList>
-            <DownloadResumeButton />
+      <div className="container mx-auto flex flex-col gap-16 xl:gap-20">
+        {/* header */}
+        <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6">
+          <div>
+            <p className="section-title mb-3">Resume</p>
+            <h1 className="h2 mb-4">
+              Experience, education
+              <br />
+              &amp; <span className="text-accent">skills.</span>
+            </h1>
+            <p className="text-muted max-w-xl leading-relaxed">
+              {experience.description}
+            </p>
           </div>
-          <ScrollArea className="h-[60vh] w-full bg-foreground/5 rounded-xl p-6 sm:p-8">
-            <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-muted mx-auto xl:mx-0">
-                  {experience.description}
-                </p>
-                {/* <ScrollArea className="h-[400px]"> */}
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-card h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-muted">{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                {/* </ScrollArea> */}
-              </div>
-            </TabsContent>
-            <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-muted mx-auto xl:mx-0">
-                  {education.description}
-                </p>
-                {/* <ScrollArea className="h-[400px]"> */}
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-card h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.degree}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-muted">{item.institution}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                {/* </ScrollArea> */}
-              </div>
-            </TabsContent>
+          <DownloadResumeButton />
+        </div>
 
-            <TabsContent value="skills" className="w-full h-full">
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-muted mx-auto xl:mx-0">
-                    {skills.description}
-                  </p>
-                </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-card rounded-xl flex flex-col justify-center items-center group gap-2">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                              <p className="capitalize text-sm">{skill.name}</p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
-            <TabsContent
-              value="about"
-              className="w-full h-full"
-            >
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-muted mx-auto xl:mx-0">
-                  {about.description}
+        {/* experience timeline */}
+        <section>
+          <h2 className="flex items-center gap-3 text-2xl font-semibold mb-8">
+            <span className="w-10 h-10 rounded-full border border-border text-accent flex items-center justify-center">
+              <FiAward />
+            </span>
+            {experience.title}
+          </h2>
+          <ol className="relative border-l border-border ml-2 pl-8 flex flex-col gap-9">
+            {experience.items.map((item, index) => (
+              <li key={index} className="relative">
+                <span className="absolute -left-[39px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background"></span>
+                <p className="text-accent text-sm font-medium tracking-wide">
+                  {item.duration}
                 </p>
-                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-card h-[120px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-accent">{item.fieldName}</span>
-                        <h3 className="text-xl text-center lg:text-left">
-                          {item.fieldValue}
-                        </h3>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
-          </ScrollArea>
-        </Tabs>
+                <h3 className="text-lg xl:text-xl font-semibold mt-1">
+                  {item.position}
+                </h3>
+                <p className="text-muted mt-0.5">{item.company}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* education */}
+        <section>
+          <h2 className="flex items-center gap-3 text-2xl font-semibold mb-8">
+            <span className="w-10 h-10 rounded-full border border-border text-accent flex items-center justify-center">
+              <FiBookOpen />
+            </span>
+            {education.title}
+          </h2>
+          <p className="text-muted max-w-xl leading-relaxed mb-8 -mt-4">
+            {education.description}
+          </p>
+          <ul className="grid md:grid-cols-2 gap-5">
+            {education.items.map((item, index) => {
+              const cert = certLinks[item.institution];
+              return (
+                <li
+                  key={index}
+                  className="rounded-2xl border border-border bg-card p-6 xl:p-7 hover:border-accent/40 transition-colors flex flex-col"
+                >
+                  <p className="text-accent text-sm font-medium tracking-wide">
+                    {item.duration}
+                  </p>
+                  <h3 className="text-lg font-semibold mt-1">
+                    {item.degree}
+                  </h3>
+                  <p className="text-muted mt-0.5">{item.institution}</p>
+                  {cert && (
+                    <a
+                      href={cert}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 text-accent hover:text-accent-hover inline-flex items-center gap-1 font-medium text-sm"
+                    >
+                      View certificate <FiArrowUpRight />
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        {/* skills */}
+        <section>
+          <h2 className="flex items-center gap-3 text-2xl font-semibold mb-8">
+            <span className="w-10 h-10 rounded-full border border-border text-accent flex items-center justify-center">
+              <FiCode />
+            </span>
+            {skills.title}
+          </h2>
+          <p className="text-muted max-w-xl leading-relaxed mb-8 -mt-4">
+            {skills.description}
+          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+            {skills.skillList.map((skill, index) => (
+              <li
+                key={index}
+                className="rounded-xl border border-border bg-card px-3 py-4 flex flex-col items-center justify-center gap-2 hover:border-accent/40 transition-colors group"
+              >
+                <span className="text-3xl text-accent">{skill.icon}</span>
+                <span className="text-xs capitalize text-center leading-tight text-muted group-hover:text-foreground transition-colors">
+                  {skill.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </motion.div>
   );

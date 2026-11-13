@@ -13,10 +13,8 @@ const Header = () => {
               <span className="text-accent">{"{"}</span>K
               <span className="text-accent">{"}"}</span>
             </span>
-            <span className="hidden sm:block text-sm text-muted leading-tight">
-              Yusuf
-              <br />
-              Akorede
+            <span className="hidden sm:block text-sm text-muted font-medium tracking-wide leading-tight">
+              Korecodes
             </span>
           </Link>
 
