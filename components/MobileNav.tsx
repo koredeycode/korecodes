@@ -62,10 +62,11 @@ import { CiMenuFries } from "react-icons/ci";
 
 const links = [
   { name: "home", path: "/" },
-  { name: "projects", path: "/projects" },
+  { name: "work", path: "/#work" },
+  { name: "projects", path: "/#projects" },
   { name: "blogs", path: "/blogs" },
-  { name: "resume", path: "/resume" },
-  { name: "contact", path: "/contact" },
+  { name: "about", path: "/#about" },
+  { name: "contact", path: "/#contact" },
 ];
 
 const MobileNav = () => {

@@ -1,64 +1,95 @@
 @import "tailwindcss";
 
-/* :root { */
-/* --background: #ffffff;
-  --foreground: #171717; */
-/* --primary: #1c1c22; */
-/* --accent: #00ff99; */
-
-/* --accent-hover: #00e187; */
-/* } */
-
+/* Design tokens — light is default on :root, dark via .dark (next-themes) */
 :root {
-  --primary: #0f172a; /* deep navy (background) */
-  --accent: #38bdf8; /* sky blue / cyan */
-  --accent-hover: #0284c7; /* darker cyan for hover */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-hover: #f1f5f9;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #0f172a; /* dark surface — also used to force-dark legacy pages */
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --violet: #7c3aed;
+}
+
+.dark {
+  --background: #0a0f1e;
+  --foreground: #e2e8f0;
+  --card: #111a2e;
+  --card-hover: #16213a;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --primary: #0f172a;
+  --accent: #2dd4bf;
+  --accent-hover: #5eead4;
+  --violet: #a78bfa;
 }
 
 @theme inline {
-  /* --color-background: var(--background);
-  --color-foreground: var(--foreground); */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
-
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
+  --color-violet: var(--violet);
 
   --font-primary: var(--font-fira-code);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  /* background: var(--background);
-  color: var(--foreground); */
-  /* font-family: Arial, Helvetica, sans-serif; */
-  @apply font-primary bg-primary text-white leading-loose;
+  @apply font-primary bg-background text-foreground leading-relaxed;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .h1 {
-  @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  @apply text-[44px] xl:text-[72px] leading-[1.08] font-semibold tracking-tight;
 }
 
 .h2 {
-  @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  @apply text-[32px] xl:text-[44px] leading-[1.1] font-semibold tracking-tight;
 }
+
 .h3 {
   @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
 }
 
 .text-outline {
-  -webkit-text-stroke: 1px #ffffff;
+  -webkit-text-stroke: 1px currentColor;
 }
 
-.text-outline-hover {
-  -webkit-text-stroke: 1px #00ff99;
+/* Glass surfaces */
+.glass {
+  @apply bg-card/70 backdrop-blur-xl border border-border;
+}
+
+/* Section container */
+.section {
+  @apply max-w-6xl mx-auto px-6 py-20 xl:py-28;
+}
+
+/* Section heading */
+.section-title {
+  @apply text-sm font-semibold uppercase tracking-[0.2em] text-accent;
+}
+
+/* Force-dark wrapper for legacy pages (keeps them correct in light theme) */
+.force-dark {
+  /* re-map accents to their dark-mode values so hardcoded text-white styles hold */
+  --accent: #2dd4bf;
+  --accent-hover: #5eead4;
+  --violet: #a78bfa;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --card: #111a2e;
+  --foreground: #e2e8f0;
+  background-color: var(--primary);
+  color: #ffffff;
 }
 
 /* Hide scrollbar utility */
