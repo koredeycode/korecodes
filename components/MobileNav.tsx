@@ -38,7 +38,7 @@ const MobileNav = () => {
               <span className="text-accent">{"{"}</span>K
               <span className="text-accent">{"}"}</span>
             </h1>
-            <p className="text-foreground text-sm font-semibold mt-2">Korecodes</p>
+            <p className="text-foreground text-lg font-semibold mt-2">Korecodes</p>
           </Link>
         </div>
         <nav className="flex flex-col justify-center items-center gap-3">
