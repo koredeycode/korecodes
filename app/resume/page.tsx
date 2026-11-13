@@ -1,7 +1,7 @@
 "use client";
 
 import DownloadResumeButton from "@/components/DownloadResumeButton";
-import { education, experience, skillsData } from "@/constants";
+import { about, education, experience, skillsData } from "@/constants";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import {
@@ -93,7 +93,7 @@ const Resume = () => {
           <DownloadResumeButton />
         </div>
 
-        {/* experience timeline */}
+        {/* experience timeline + at-a-glance */}
         <section>
           <h2 className="flex items-center gap-3 text-2xl font-semibold mb-8">
             <span className="w-10 h-10 rounded-full border border-border text-accent flex items-center justify-center">
@@ -101,20 +101,47 @@ const Resume = () => {
             </span>
             {experience.title}
           </h2>
-          <ol className="relative border-l border-border ml-2 pl-8 flex flex-col gap-9">
-            {experience.items.map((item, index) => (
-              <li key={index} className="relative">
-                <span className="absolute -left-[39px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background"></span>
-                <p className="text-accent text-sm font-medium tracking-wide">
-                  {item.duration}
-                </p>
-                <h3 className="text-lg xl:text-xl font-semibold mt-1">
-                  {item.position}
-                </h3>
-                <p className="text-muted mt-0.5">{item.company}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="grid xl:grid-cols-[1fr_320px] gap-12 xl:gap-16 items-start">
+            <ol className="relative border-l border-border ml-2 pl-8 flex flex-col gap-9">
+              {experience.items.map((item, index) => (
+                <li key={index} className="relative">
+                  <span className="absolute -left-[39px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-accent bg-background"></span>
+                  <p className="text-accent text-sm font-medium tracking-wide">
+                    {item.duration}
+                  </p>
+                  <h3 className="text-lg xl:text-xl font-semibold mt-1">
+                    {item.position}
+                  </h3>
+                  <p className="text-muted mt-0.5">{item.company}</p>
+                </li>
+              ))}
+            </ol>
+
+            <aside className="rounded-2xl border border-border bg-card p-6 xl:p-7">
+              <h3 className="font-semibold mb-5">At a glance</h3>
+              <ul className="flex flex-col gap-4 text-sm">
+                {about.info.map((item) => (
+                  <li
+                    key={item.fieldName}
+                    className="flex items-center justify-between gap-4"
+                  >
+                    <span className="text-muted shrink-0">
+                      {item.fieldName}
+                    </span>
+                    <span className="font-medium text-right inline-flex items-center gap-2">
+                      {item.fieldValue === "Available" && (
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+                        </span>
+                      )}
+                      {item.fieldValue}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
         </section>
 
         {/* education */}
