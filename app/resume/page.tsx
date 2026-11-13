@@ -3,41 +3,46 @@
 import { about, education, experience, skillsData } from "@/constants";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { FaGitAlt, FaJs, FaPython, FaReact } from "react-icons/fa";
 import {
-  FaCss3,
-  FaFigma,
-  FaGitAlt,
-  FaHtml5,
-  FaJs,
-  FaNodeJs,
-  FaReact,
-} from "react-icons/fa";
-import {
-  SiDirectus,
+  SiDocker,
   SiExpo,
   SiExpress,
+  SiFastapi,
+  SiHono,
+  SiLangchain,
+  SiMongodb,
   SiNestjs,
   SiNextdotjs,
+  SiOllama,
+  SiPostgresql,
+  SiRedis,
+  SiSolidity,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 
 // Icon mapping for skills
 const iconMap: Record<string, ReactNode> = {
-  FaHtml5: <FaHtml5 />,
-  FaCss3: <FaCss3 />,
-  FaJs: <FaJs />,
   SiTypescript: <SiTypescript />,
+  FaPython: <FaPython />,
+  FaJs: <FaJs />,
+  SiSolidity: <SiSolidity />,
+  SiLangchain: <SiLangchain />,
+  SiFastapi: <SiFastapi />,
+  SiOllama: <SiOllama />,
+  SiNextdotjs: <SiNextdotjs />,
   FaReact: <FaReact />,
   SiExpo: <SiExpo />,
-  SiNextdotjs: <SiNextdotjs />,
-  SiTailwindcss: <SiTailwindcss />,
-  FaNodeJs: <FaNodeJs />,
-  SiExpress: <SiExpress />,
   SiNestjs: <SiNestjs />,
+  SiExpress: <SiExpress />,
+  SiHono: <SiHono />,
+  SiPostgresql: <SiPostgresql />,
+  SiMongodb: <SiMongodb />,
+  SiRedis: <SiRedis />,
+  SiDocker: <SiDocker />,
   FaGitAlt: <FaGitAlt />,
-  FaFigma: <FaFigma />,
-  SiDirectus: <SiDirectus />,
+  SiTailwindcss: <SiTailwindcss />,
 };
 
 // Build skills with actual icons

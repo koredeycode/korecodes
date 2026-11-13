@@ -18,18 +18,24 @@ import {
   FaHtml5,
   FaJs,
   FaNodeJs,
+  FaPython,
   FaReact
 } from "react-icons/fa";
 import {
   SiAppwrite,
   SiDirectus,
+  SiDocker,
   SiExpo,
   SiExpress,
-  SiHono, SiMongodb,
+  SiFastapi,
+  SiHono, SiLangchain, SiMongodb,
   SiNestjs,
   SiNextdotjs,
+  SiOllama,
   SiPostgresql,
+  SiRedis,
   SiSolidity,
+  SiSolana,
   SiTailwindcss,
   SiTypescript,
   SiVite
@@ -68,6 +74,14 @@ const stackIcons: { [key: string]: React.ReactNode } = {
   "Hono.js": <SiHono />,
   "MongoDB": <SiMongodb />,
   "Expo": <SiExpo />,
+  "Python": <FaPython />,
+  "LangChain": <SiLangchain />,
+  "LangGraph": <SiLangchain />,
+  "FastAPI": <SiFastapi />,
+  "Ollama": <SiOllama />,
+  "Solana": <SiSolana />,
+  "Docker": <SiDocker />,
+  "Redis": <SiRedis />,
 };
 
 const Work = () => {
@@ -174,25 +188,6 @@ const Work = () => {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Github repository</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </Link>
-                )}
-
-                {project.github_api && (
-                  <Link
-                    href={project.github_api}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <TooltipProvider delayDuration={100}>
-                      <Tooltip>
-                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>API repository</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
