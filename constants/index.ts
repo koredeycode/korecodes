@@ -23,8 +23,8 @@ export const projects = [
       "A multi-agent workflow orchestrator that compiles tasks into a DAG: independent branches execute in parallel with real-time streaming, and a conflict-resolution step judges and merges competing agent responses against the task's criteria.",
     stack: [
       { name: "TypeScript" },
-      { name: "LangGraph" },
-      { name: "Next.js" },
+      { name: "React Flow" },
+      { name: "Hono" },
     ],
     image: "/assets/work/qwenweaver.png",
     live: "https://youtu.be/rWAoW_FgRBY",

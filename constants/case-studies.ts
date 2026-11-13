@@ -71,7 +71,7 @@ export const caseStudies: CaseStudy[] = [
     year: "2025–2026",
     category: "AI · Orchestration",
     role: "Solo builder — orchestration engine, runtime, UI",
-    stack: ["TypeScript", "LangGraph", "Next.js"],
+    stack: ["TypeScript", "React Flow", "Hono"],
     image: "/assets/work/qwenweaver.png",
     links: [
       {
