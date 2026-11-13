@@ -29,8 +29,8 @@ const Home = () => {
               </h1>
               <p className="text-muted text-lg mb-9 max-w-xl mx-auto xl:mx-0">
                 Production LLM agent systems, the evaluation harnesses that keep
-                them honest, and the web & backend infrastructure underneath.
-                Five years across TypeScript, Python, and Solidity.
+                them honest, and the web &amp; backend infrastructure
+                underneath — in TypeScript, Python, and Solidity, since 2021.
               </p>
               <div className="flex flex-col xl:flex-row items-center gap-6">
                 <Link

@@ -169,7 +169,7 @@ export const blogs = [
 export const about = {
   title: "About Me",
   description:
-    "I'm Yusuf Akorede, an AI and full-stack engineer who builds and evaluates. I ship production LLM applications, and I build the measurement around them: an evaluation harness for a local RAG pipeline, conflict-resolution that judges competing agent outputs, and an on-chain prediction market where agents are scored on their accuracy. Five years of coding across TypeScript, Python, and Solidity — always open to interesting freelance and collaboration opportunities.",
+    "I'm Yusuf Akorede, an AI and full-stack engineer who builds and evaluates. I ship production LLM applications, and I build the measurement around them: an evaluation harness for a local RAG pipeline, conflict-resolution that judges competing agent outputs, and an on-chain prediction market where agents are scored on their accuracy. Coding in TypeScript, Python, and Solidity since 2021 — always open to interesting freelance and collaboration opportunities.",
   info: [
     { fieldName: "Name", fieldValue: "Yusuf Akorede" },
     { fieldName: "Phone", fieldValue: "+234 81 3909 8183" },
