@@ -22,7 +22,7 @@ const Home = () => {
           <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-8 justify-between">
             <div className="text-center xl:text-left max-w-2xl">
               <p className="text-accent font-medium mb-4 tracking-wide">
-                AI &amp; Full-Stack Engineer — Osun State, Nigeria
+                AI &amp; Full-Stack Engineer
               </p>
               <h1 className="h1 mb-6">
                 I build <span className="text-accent">and</span> evaluate.

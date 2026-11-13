@@ -13,7 +13,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
             opacity: 0,
             transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
           }}
-          className="h-screen w-screen fixed bg-background top-0 pointer-events-none"
+          className="h-screen w-screen fixed inset-0 bg-background top-0 pointer-events-none z-[70]"
         ></motion.div>
 
         <div className="p-[15px] mt-9">{children}</div>
