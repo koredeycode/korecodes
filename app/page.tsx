@@ -51,7 +51,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="w-[300px] h-[300px] xl:w-[420px] xl:h-[420px] shrink-0">
+            <div className="w-[300px] h-[300px] xl:w-[506px] xl:h-[506px] shrink-0">
               <Photo />
             </div>
           </div>
