@@ -52,14 +52,14 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="force-dark min-h-screen flex flex-col justify-center py-12 xl:px-6"
+      className="min-h-screen flex flex-col justify-center py-12 xl:px-6"
     >
       <div className="container mx-auto">
         <div className="mb-12 text-center">
           <h1 className="h2 mb-4">
             Contact <span className="text-accent">Me</span>
           </h1>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Fill out the form below and I'll get back to you as soon as possible.
           </p>
         </div>
@@ -68,7 +68,7 @@ const Contact = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              className="flex flex-col gap-6 p-10 bg-card rounded-xl"
             >
               <h3 className="text-xl text-accent">Let's work together</h3>
               {/* input */}
@@ -117,11 +117,11 @@ const Contact = () => {
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:[h-72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:[h-72px] bg-card text-accent rounded-md flex items-center justify-center">
                       <div className="text-[28px]">{item.icon}</div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
+                      <p className="text-muted">{item.title}</p>
                       <h3 className="text-xl">{item.description}</h3>
                     </div>
                   </li>

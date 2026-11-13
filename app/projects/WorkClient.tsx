@@ -114,14 +114,14 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="force-dark min-h-screen flex flex-col justify-center py-12 xl:px-6"
+      className="min-h-screen flex flex-col justify-center py-12 xl:px-6"
     >
       <div className="container mx-auto">
         <div className="mb-12 text-center">
           <h1 className="h2 mb-4">
             My <span className="text-accent">Projects</span>
           </h1>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Here are some of my recent projects.
           </p>
         </div>
@@ -132,11 +132,11 @@ const Work = () => {
                 <span className="text-accent text-sm font-bold uppercase tracking-widest mb-2 block">
                   {project.category} project
                 </span>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                <h2 className="text-[42px] font-bold leading-none text-foreground group-hover:text-accent transition-all duration-500 capitalize">
                   {project.title}
                 </h2>
               </div>
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-muted">{project.description}</p>
               
               {/* Stack Badges */}
               <div className="flex flex-wrap gap-2">
@@ -154,7 +154,7 @@ const Work = () => {
                 })}
               </div>
 
-              <div className="border border-white/20"></div>
+              <div className="border border-border"></div>
               <div className="flex items-center gap-4">
                 {project.live && (
                   <Link
@@ -164,8 +164,8 @@ const Work = () => {
                   >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
-                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-foreground/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-foreground text-3xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Live project</p>
@@ -183,8 +183,8 @@ const Work = () => {
                   >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
-                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-foreground/5 flex justify-center items-center group">
+                          <BsGithub className="text-foreground text-3xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Github repository</p>

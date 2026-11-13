@@ -1,57 +1,3 @@
-// "use client";
-
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
-// import { CiMenuFries } from "react-icons/ci";
-
-// const links = [
-//   { name: "home", path: "/" },
-//   // { name: "services", path: "/services" },
-//   { name: "projects", path: "/projects" },
-//   { name: "resume", path: "/resume" },
-//   { name: "contact", path: "/contact" },
-// ];
-
-// const MobileNav = () => {
-//   const pathname = usePathname();
-//   return (
-//     <Sheet>
-//       <SheetTrigger className="flex justify-center items-center">
-//         <CiMenuFries className="text-[32px] text-accent" />
-//       </SheetTrigger>
-//       <SheetContent className="flex flex-col">
-//         <div className="mt-32 mb-40 text-center text-2xl">
-//           <Link href="/">
-//             <h1 className="text-4xl font-semibold">
-//               <span className="text-accent">{"{"}</span>K
-//               <span className="text-accent">{"}"}</span>
-//             </h1>
-//           </Link>
-//         </div>
-//         <nav className="flex flex-col justify-center, items-center gap-8">
-//           {links.map((link, index) => {
-//             return (
-//               <Link
-//                 key={index}
-//                 href={link.path}
-//                 className={`${
-//                   link.path == pathname &&
-//                   "text-accent border-b-2 border-accent"
-//                 } text-xl capitalize font-medium hover:text-accent transition-all`}
-//               >
-//                 {link.name}
-//               </Link>
-//             );
-//           })}
-//         </nav>
-//       </SheetContent>
-//     </Sheet>
-//   );
-// };
-
-// export default MobileNav;
-
 "use client";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -69,35 +15,45 @@ const links = [
   { name: "contact", path: "/#contact" },
 ];
 
+const isActive = (path: string, pathname: string) => {
+  if (path === "/") return pathname === "/";
+  if (path === "/blogs") return pathname.startsWith("/blogs");
+  if (path === "/#work") return pathname.startsWith("/work/");
+  return false;
+};
+
 const MobileNav = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-accent" />
+      <SheetTrigger className="flex justify-center items-center w-9 h-9 rounded-full border border-border text-accent">
+        <CiMenuFries className="text-xl" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
-        <div className="mt-32 mb-40 text-center text-2xl">
+      <SheetContent className="flex flex-col bg-card">
+        <div className="mt-28 mb-12 text-center">
           <Link href="/" onClick={() => setOpen(false)}>
             <h1 className="text-4xl font-semibold">
               <span className="text-accent">{"{"}</span>K
               <span className="text-accent">{"}"}</span>
             </h1>
+            <p className="text-muted text-sm mt-2">Yusuf Akorede</p>
           </Link>
         </div>
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col justify-center items-center gap-3">
           {links.map((link, index) => {
+            const active = isActive(link.path, pathname);
             return (
               <Link
                 key={index}
                 href={link.path}
-                onClick={() => setOpen(false)} // 🔑 close sheet on click
-                className={`${
-                  link.path === pathname &&
-                  "text-accent border-b-2 border-accent"
-                } text-xl capitalize font-medium hover:text-accent transition-all`}
+                onClick={() => setOpen(false)} // close sheet on click
+                className={`capitalize text-lg font-medium rounded-full px-6 py-2.5 transition-all ${
+                  active
+                    ? "bg-accent/10 text-accent"
+                    : "text-muted hover:text-foreground hover:bg-foreground/5"
+                }`}
               >
                 {link.name}
               </Link>
