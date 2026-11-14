@@ -1,6 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
-import { FiArrowUpRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  FiAlertCircle,
+  FiArrowUpRight,
+  FiCheckCircle,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiX,
+} from "react-icons/fi";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -27,8 +36,22 @@ const info = [
 ];
 
 const Contact = () => {
+  const [modal, setModal] = useState<"success" | "error" | null>(null);
+  const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    if (!modal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModal(null);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [modal]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
+    setSending(true);
 
     const form = e.target as HTMLFormElement;
     const data = {
@@ -40,23 +63,30 @@ const Contact = () => {
         .value,
     };
 
-    // Send to your API route
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      // Send to your API route
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    if (res.ok) {
-      alert("Message sent!");
-      form.reset();
-    } else {
-      alert("Something went wrong");
+      if (res.ok) {
+        form.reset();
+        setModal("success");
+      } else {
+        setModal("error");
+      }
+    } catch {
+      setModal("error");
+    } finally {
+      setSending(false);
     }
   };
 
   return (
-    <motion.section
+    <>
+      <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -184,15 +214,80 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="mt-1 px-7 py-3.5 rounded-full bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+                disabled={sending}
+                className="mt-1 px-7 py-3.5 rounded-full bg-accent text-white font-medium hover:bg-accent-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send message
+                {sending ? "Sending…" : "Send message"}
               </button>
             </form>
           </div>
         </div>
       </div>
-    </motion.section>
+      </motion.section>
+
+      {/* submission confirmation modal */}
+      <AnimatePresence>
+        {modal && (
+          <motion.div
+            key="contact-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setModal(null)}
+            role="dialog"
+            aria-modal="true"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-6"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 14 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 8 }}
+              transition={{ type: "spring", stiffness: 320, damping: 26 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-sm rounded-2xl border border-border bg-card p-8 text-center shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setModal(null)}
+                aria-label="Close"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full border border-transparent flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors"
+              >
+                <FiX />
+              </button>
+
+              <div
+                className={`mx-auto mb-4 w-14 h-14 rounded-full border flex items-center justify-center text-3xl ${
+                  modal === "success"
+                    ? "text-accent border-accent/40 bg-accent/10"
+                    : "text-red-400 border-red-400/40 bg-red-400/10"
+                }`}
+              >
+                {modal === "success" ? <FiCheckCircle /> : <FiAlertCircle />}
+              </div>
+
+              <h3 className="h3 mb-2">
+                {modal === "success" ? "Message sent!" : "Something went wrong"}
+              </h3>
+              <p className="text-muted text-sm leading-relaxed mb-6">
+                {modal === "success"
+                  ? "Thanks for reaching out — it landed straight in my inbox. I'll get back to you as soon as I can."
+                  : "Your message didn't go through. Please try again, or email me directly at koredey4u@gmail.com."}
+              </p>
+
+              <button
+                type="button"
+                autoFocus
+                onClick={() => setModal(null)}
+                className="w-full px-7 py-3 rounded-full bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+              >
+                {modal === "success" ? "Done" : "Try again"}
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
